@@ -15,7 +15,8 @@ import static java.lang.System.setProperties;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\github\\modul133-nadina-bookshelf\\bookshelf\\src\\main\\resources\\bookList.properties";
+    private static final String PROPERTIES_PATH = "C:\\github\\m133-projektarbeit-team\\projektarbeit\\src\\main\\resources\\spielerlist.properties";
+
     private static Properties properties = null;
 
     public static String getProperty(String property) {

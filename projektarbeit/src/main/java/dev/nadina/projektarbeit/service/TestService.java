@@ -1,25 +1,24 @@
 package dev.nadina.projektarbeit.service;
 
-import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.util.List;
+/**
+ * test service
+ */
+@Path("test")
+public class TestService {
 
-@Path("spieler")
-public class SpielerService {
     @GET
-    @Path("liste")
+    @Path("test")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listSpieler(){
-        List<Spieler> SpielerList = DataHandler.getInstance().readAllSpielers();
+    public Response test() {
         return Response
                 .status(200)
-                .entity(SpielerList)
+                .entity("Test erfolgreich")
                 .build();
     }
 }
