@@ -52,6 +52,34 @@ public class DataHandler {
         return getSpielerList();
     }
 
+    public Spieler readSpielerByID(String spielerID) {
+        Spieler spieler = null;
+        for (Spieler entity : getSpielerList()) {
+            if (entity.getSpielerID().equals(spielerID)) {
+                spieler = entity;
+            }
+        }
+        return spieler;
+    }
+
+
+    /**
+     * reads all Sportarten
+     * @return list of Spotarten
+     */
+    public List<Sportarten> readAllSportarten() {
+        return getSportartenList();
+    }
+
+    public Sportarten readSportartByID(String sportartID) {
+        Sportarten sportart = null;
+        for (Sportarten entity : getSportartenList()) {
+            if (entity.getSportartID().equals(sportartID)) {
+                sportart = entity;
+            }
+        }
+        return sportart;
+    }
 
     /**
      * reads all Teams
@@ -61,13 +89,16 @@ public class DataHandler {
         return getTeamList();
     }
 
-    /**
-     * reads all Sportarten
-     * @return list of Spotarten
-     */
-    public List<Sportarten> readAllSportarten() {
-        return getSportartenList();
+    public Team readTeamByID(String teamID) {
+        Team team = null;
+        for (Team entity : getTeamList()) {
+            if (entity.getTeamID().equals(teamID)) {
+                team = entity;
+            }
+        }
+        return team;
     }
+
 
     /******************* Read JSON Files ******************/
     /**

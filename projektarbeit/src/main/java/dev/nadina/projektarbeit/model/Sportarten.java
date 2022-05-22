@@ -2,6 +2,7 @@ package dev.nadina.projektarbeit.model;
 
 public class Sportarten {
 
+    private String sportartID;
     private String sportart;
     private String spieleranzahl;
 
@@ -25,6 +26,13 @@ public class Sportarten {
 
     }
 
+    public String getSportartID() {
+        return sportartID;
+    }
+
+    public void setSportartID(String sportartID) {
+        this.sportartID = sportartID;
+    }
 
     public String getSportart() {
         return sportart;
