@@ -3,8 +3,11 @@
 - Abgane UML und Projektberschreibung
 
 ## Milestone 1
-- Service Klassen + Extra Klassen
+Service Klassen + Extra Klasse
 -   TeamService
 -   SpielerService
--   SportartenService
--   
+-   SportartenService 
+JSON Dateien
+- Team
+- Spieler
+- Sportarten
