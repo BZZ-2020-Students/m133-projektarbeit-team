@@ -1,9 +1,7 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
-import dev.nadina.projektarbeit.model.Team;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -12,18 +10,16 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
-@Path("teamprojekt")
-public class SpielerService {
-    @Path("spieler")
+@Path ("sportarten")
+public class SportartenService {
+    @Path("sportart")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listSpieler(){
-        List<Spieler> SpielerList = DataHandler.getInstance().readAllSpielers();
+    public Response listSportart(){
+        List<Sportarten> SportartList = DataHandler.getInstance().readAllSportarten();
         return Response
                 .status(200)
-                .entity(SpielerList)
+                .entity(SportartList)
                 .build();
     }
-
-
 }

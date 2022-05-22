@@ -2,6 +2,8 @@ package dev.nadina.projektarbeit.data;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.nadina.projektarbeit.model.Spieler;
+import dev.nadina.projektarbeit.model.Sportarten;
+import dev.nadina.projektarbeit.model.Team;
 import dev.nadina.projektarbeit.service.Config;
 
 import java.io.IOException;
@@ -16,14 +18,19 @@ import java.util.List;
 public class DataHandler {
     private static DataHandler instance = null;
     private List<Spieler> SpielerList;
-   // private List<Publisher> publisherList;
+    private List<Team> TeamList;
+    private List<Sportarten> SportartenList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
+        setTeamList(new ArrayList<>());
+        readTeamJSON();
         setSpielerList(new ArrayList<>());
         readSpielerJSON();
+        setSportartenList(new ArrayList<>());
+        readSportartenJSON();
     }
 
     /**
@@ -36,7 +43,7 @@ public class DataHandler {
         return instance;
     }
 
-
+    /******************* Read Methodes ******************/
     /**
      * reads all Spielers
      * @return list of Spielers
@@ -45,6 +52,24 @@ public class DataHandler {
         return getSpielerList();
     }
 
+
+    /**
+     * reads all Teams
+     * @return list of Teams
+     */
+    public List<Team> readAllTeams() {
+        return getTeamList();
+    }
+
+    /**
+     * reads all Sportarten
+     * @return list of Spotarten
+     */
+    public List<Sportarten> readAllSportarten() {
+        return getSportartenList();
+    }
+
+    /******************* Read JSON Files ******************/
     /**
      * reads the Spielers from the JSON-file
      */
@@ -65,6 +90,55 @@ public class DataHandler {
     }
 
     /**
+     * reads the Teams from the JSON-file
+     */
+    private void readTeamJSON() {
+        try {
+            String path = Config.getProperty("TeamJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Team[] teams = objectMapper.readValue(jsonData, Team[].class);
+            for (Team team : teams) {
+                getTeamList().add(team);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private void readSportartenJSON() {
+        try {
+            String path = Config.getProperty("SportartJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Sportarten[] sportarts = objectMapper.readValue(jsonData, Sportarten[].class);
+            for (Sportarten sportart : sportarts) {
+                getSportartenList().add(sportart);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
+    /******************* Lists ******************/
+
+
+    private List<Team> getTeamList() {
+        return TeamList;
+    }
+
+
+    private void setTeamList(List<Team> TeamList) {
+        this.TeamList = TeamList;
+    }
+
+
+    /**
      * gets SpielerList
      *
      * @return value of SpielerList
@@ -82,4 +156,12 @@ public class DataHandler {
         this.SpielerList = SpielerList;
     }
 
+
+    private List<Sportarten> getSportartenList() {
+        return SportartenList;
+    }
+
+    private void setSportartenList(List<Sportarten> SportartenList) {
+        this.SportartenList = SportartenList;
+    }
 }

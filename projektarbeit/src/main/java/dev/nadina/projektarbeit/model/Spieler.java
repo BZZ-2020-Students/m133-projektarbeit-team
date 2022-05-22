@@ -1,18 +1,18 @@
 package dev.nadina.projektarbeit.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.time.LocalDate;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dev.nadina.projektarbeit.data.DataHandler;
 
 public class Spieler {
 
-    @JsonIgnore
-    /*
-    * Attribute*/
+    private String spielerID;
     private String name;
     private String vorname;
     private String geburtsdatum;
     private Integer spielernr;
+    private String position;
+    private Boolean captain;
 
 
     /*
@@ -35,6 +35,15 @@ public class Spieler {
 
     public void deleteSpieler(){
 
+    }
+
+
+    public String getSpielerID() {
+        return spielerID;
+    }
+
+    public void setSpielerID(String spielerID) {
+        this.spielerID = spielerID;
     }
 
     public String getName() {
@@ -69,12 +78,24 @@ public class Spieler {
         this.spielernr = spielernr;
     }
 
-    //    public static void main(String[] args) {
-//        positionhandball pha = positionhandball.Fluegel;
-//        System.out.println(pha);
-//
-//        for (positionhandball enhumha : positionhandball.values()){
-//            System.out.println(enhumha);
-//        }
-//    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public Boolean getCaptain() {
+        return captain;
+    }
+
+    public void setCaptain(Boolean captain) {
+        this.captain = captain;
+    }
+
+
+
+
 }

@@ -3,12 +3,18 @@
     "name": "Rajkumar",
     "vorname": "Thurika",
     "geburtsdatum":"30.10.2004",
-    "spielernr": 12
+    "spielernr": 12,
+    "spielerID": "1",
+    "position": "Rechterflügel",
+    "captain": false
   },
   {
     "name": "Rajkumar",
     "vorname": "Thurika",
     "geburtsdatum":"30.10.2004",
-    "spielernr": 12
+    "spielernr": 12,
+    "spielerID": "2",
+    "position": "Goalie",
+    "captain": true
   }
 ]
