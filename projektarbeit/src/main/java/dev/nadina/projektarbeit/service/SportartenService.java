@@ -1,7 +1,6 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -12,7 +11,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 /**
- * @Beschreibung
+ * ServiceKlasse für Sportarten
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0

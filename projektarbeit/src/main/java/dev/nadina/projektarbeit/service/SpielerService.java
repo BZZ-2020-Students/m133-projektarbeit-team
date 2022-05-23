@@ -11,6 +11,8 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 /**
+ * ServiceKlasse für Spieler
+ *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0
  * @since   2022-05-20

@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
- * @Beschreibung
+ * Config Klasse für die Konfiguration der REST-Schnittstelle
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0

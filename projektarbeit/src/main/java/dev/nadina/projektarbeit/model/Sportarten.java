@@ -1,5 +1,6 @@
 package dev.nadina.projektarbeit.model;
 /**
+ * Daten und Methoden für die Sportarten
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0
