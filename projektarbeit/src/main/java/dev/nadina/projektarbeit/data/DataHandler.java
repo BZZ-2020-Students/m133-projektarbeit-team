@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
+import dev.nadina.projektarbeit.model.User;
 import dev.nadina.projektarbeit.service.Config;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class DataHandler {
     private List<Spieler> SpielerList;
     private List<Team> TeamList;
     private List<Sportarten> SportartenList;
+    private List<User> UserList;
 
     /**
      * private constructor defeats instantiation
@@ -37,6 +39,8 @@ public class DataHandler {
         readSpielerJSON();
         setSportartenList(new ArrayList<>());
         readSportartenJSON();
+        setUserList(new ArrayList<>());
+        readUserJSON();
     }
 
     /**
@@ -118,6 +122,28 @@ public class DataHandler {
     }
 
     /**
+     * reads all Users
+     * @return list of Users
+     */
+    public List<User> readAllUser(){
+        return getUserList();
+    }
+
+    /**
+     * reads all UsersByID
+     * @return user
+     */
+    public User readUserByID(String userID) {
+        User user = null;
+        for (User entity : getUserList()) {
+            if (entity.getUserUUID().equals(userID)) {
+                user = entity;
+            }
+        }
+        return user;
+    }
+
+    /**
      * reads the Spielers from the JSON-file
      */
     private void readSpielerJSON() {
@@ -168,6 +194,25 @@ public class DataHandler {
             Sportarten[] sportarts = objectMapper.readValue(jsonData, Sportarten[].class);
             for (Sportarten sportart : sportarts) {
                 getSportartenList().add(sportart);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * reads the User from the JSON-file
+     */
+    private void readUserJSON() {
+        try {
+            String path = Config.getProperty("UserJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            User[] users = objectMapper.readValue(jsonData, User[].class);
+            for (User user : users) {
+                getUserList().add(user);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -227,5 +272,23 @@ public class DataHandler {
      */
     private void setSportartenList(List<Sportarten> SportartenList) {
         this.SportartenList = SportartenList;
+    }
+
+    /**
+     * gets UserList
+     *
+     * @return value of UserList
+     */
+    private List<User> getUserList() {
+        return UserList;
+    }
+
+    /**
+     * sets UserList
+     *
+     * @param UserList the value to set
+     */
+    private void setUserList(List<User> UserList) {
+        this.UserList = UserList;
     }
 }
