@@ -4,5 +4,11 @@
   "userName": "user1",
   "password": "user1pw",
   "userRole": "Admin"
+  },
+  {
+    "userUUID": "002",
+    "userName": "user2",
+    "password": "user2pw",
+    "userRole": "User"
   }
 ]
