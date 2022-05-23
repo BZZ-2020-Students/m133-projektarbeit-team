@@ -13,8 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * reads and writes the data in the JSON-files
+ * Schreibt und liest die Daten in die JSON-Files
+ *
+ * @author  Nadina Shirin Amlser (shirin197)
+ * @version 1.0
+ * @since   2022-05-22
  */
+
+
 public class DataHandler {
     private static DataHandler instance = null;
     private List<Spieler> SpielerList;
@@ -35,7 +41,7 @@ public class DataHandler {
 
     /**
      * gets the only instance of this class
-     * @return
+     * @return instance
      */
     public static DataHandler getInstance() {
         if (instance == null)
@@ -43,7 +49,6 @@ public class DataHandler {
         return instance;
     }
 
-    /******************* Read Methodes ******************/
     /**
      * reads all Spielers
      * @return list of Spielers
@@ -52,6 +57,10 @@ public class DataHandler {
         return getSpielerList();
     }
 
+    /**
+     * reads all SpielerByID
+     * @return spieler
+     */
     public Spieler readSpielerByID(String spielerID) {
         Spieler spieler = null;
         for (Spieler entity : getSpielerList()) {
@@ -65,12 +74,16 @@ public class DataHandler {
 
     /**
      * reads all Sportarten
-     * @return list of Spotarten
+     * @return list of Sportarten
      */
     public List<Sportarten> readAllSportarten() {
         return getSportartenList();
     }
 
+    /**
+     * reads all SportartenByID
+     * @return sportart
+     */
     public Sportarten readSportartByID(String sportartID) {
         Sportarten sportart = null;
         for (Sportarten entity : getSportartenList()) {
@@ -89,6 +102,11 @@ public class DataHandler {
         return getTeamList();
     }
 
+
+    /**
+     * reads all TeamsByID
+     * @return team
+     */
     public Team readTeamByID(String teamID) {
         Team team = null;
         for (Team entity : getTeamList()) {
@@ -99,8 +117,6 @@ public class DataHandler {
         return team;
     }
 
-
-    /******************* Read JSON Files ******************/
     /**
      * reads the Spielers from the JSON-file
      */
@@ -139,6 +155,9 @@ public class DataHandler {
         }
     }
 
+    /**
+     * reads the Sportarten from the JSON-file
+     */
     private void readSportartenJSON() {
         try {
             String path = Config.getProperty("SportartJSON");
@@ -155,24 +174,29 @@ public class DataHandler {
         }
     }
 
-
-    /******************* Lists ******************/
-
-
+    /**
+     * gets TeamList
+     *
+     * @return value of TeamList
+     */
     private List<Team> getTeamList() {
         return TeamList;
     }
 
-
+    /**
+     * writes the Spielers to the JSON-file
+     *
+     * @param TeamList the value of TeamList
+     */
     private void setTeamList(List<Team> TeamList) {
         this.TeamList = TeamList;
     }
 
 
     /**
-     * gets SpielerList
+     * sets SpielerList
      *
-     * @return value of SpielerList
+     * @return  value of SpielerList
      */
     private List<Spieler> getSpielerList() {
         return SpielerList;
@@ -187,11 +211,20 @@ public class DataHandler {
         this.SpielerList = SpielerList;
     }
 
-
+    /**
+     * gets SportartenList
+     *
+     * @return value of SportartenList
+     */
     private List<Sportarten> getSportartenList() {
         return SportartenList;
     }
 
+    /**
+     * sets SportartenList
+     *
+     * @param SportartenList the value to set
+     */
     private void setSportartenList(List<Sportarten> SportartenList) {
         this.SportartenList = SportartenList;
     }

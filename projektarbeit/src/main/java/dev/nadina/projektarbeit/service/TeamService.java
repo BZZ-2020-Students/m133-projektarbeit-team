@@ -11,12 +11,23 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+/**
+ * @Beschreibung
+ *
+ * @author  Nadina Shirin Amlser (shirin197)
+ * @version 1.0
+ * @since   2022-05-20
+ */
 
 @Path ("team")
 public class TeamService {
     @Path("list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    /**
+     * @return Response
+     * @param String teamID
+     */
     public Response listTeam(){
         List<Team> TeamList = DataHandler.getInstance().readAllTeams();
         return Response
@@ -28,6 +39,10 @@ public class TeamService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
+    /**
+     * @return Response
+     * @param String teamID
+     */
     public Response readSpieler(
             @QueryParam("id") String teamID
     ){

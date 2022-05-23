@@ -5,13 +5,15 @@ import jakarta.ws.rs.core.Application;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashSet;
 import java.util.Properties;
-import java.util.Set;
 
-import static java.lang.System.setProperties;
-
-// Annotation -> erster Teil der URL
+/**
+ * @Beschreibung
+ *
+ * @author  Nadina Shirin Amlser (shirin197)
+ * @version 1.0
+ * @since   2022-05-20
+ */
 @ApplicationPath("/resource")
 
 public class Config extends Application {
