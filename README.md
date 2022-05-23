@@ -7,8 +7,10 @@ Service Klassen + Extra Klasse
 -   TeamService
 -   SpielerService
 -   SportartenService 
+-   UserService
 
 JSON Dateien
 - Team
 - Spieler
 - Sportarten
+- User
