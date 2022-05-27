@@ -27,7 +27,7 @@ public class UserService {
      * @param teamUUID
      */
     public Response listUser(){
-        List<User> UserList = DataHandler.getInstance().readAllUser();
+        List<User> UserList = DataHandler.readAllUser();
         return Response
                 .status(200)
                 .entity(UserList)
@@ -45,7 +45,7 @@ public class UserService {
             @QueryParam("id") String userUUID
     ) {
         int httpStatus = 200;
-        User user = DataHandler.getInstance().readUserByID(userUUID);
+        User user = DataHandler.readUserByID(userUUID);
         if(user == null){
             httpStatus = 410;
         }

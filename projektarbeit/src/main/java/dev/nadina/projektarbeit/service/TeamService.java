@@ -28,7 +28,7 @@ public class TeamService {
      * @param String teamID
      */
     public Response listTeam(){
-        List<Team> TeamList = DataHandler.getInstance().readAllTeams();
+        List<Team> TeamList = DataHandler.readAllTeams();
         return Response
                 .status(200)
                 .entity(TeamList)
@@ -46,7 +46,7 @@ public class TeamService {
             @QueryParam("id") String teamID
     ){
         int httpStatus = 200;
-        Team team = DataHandler.getInstance().readTeamByID(teamID);
+        Team team = DataHandler.readTeamByID(teamID);
         if(team == null){
             httpStatus = 410;
         }

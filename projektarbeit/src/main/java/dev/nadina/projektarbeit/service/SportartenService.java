@@ -27,7 +27,7 @@ public class SportartenService {
      * @param String sportartenID
      */
     public Response listSportart(){
-        List<Sportarten> SportartList = DataHandler.getInstance().readAllSportarten();
+        List<Sportarten> SportartList = DataHandler.readAllSportarten();
         return Response
                 .status(200)
                 .entity(SportartList)
@@ -45,7 +45,7 @@ public class SportartenService {
             @QueryParam("id") String sportartID
     ){
         int httpStatus = 200;
-        Sportarten sportart = DataHandler.getInstance().readSportartByID(sportartID);
+        Sportarten sportart = DataHandler.readSportartByID(sportartID);
         if(sportart == null){
             httpStatus = 410;
         }

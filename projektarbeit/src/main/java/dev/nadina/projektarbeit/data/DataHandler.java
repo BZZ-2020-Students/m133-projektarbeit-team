@@ -6,6 +6,7 @@ import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
 import dev.nadina.projektarbeit.model.User;
 import dev.nadina.projektarbeit.service.Config;
+import jakarta.inject.Singleton;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,43 +22,43 @@ import java.util.List;
  * @since   2022-05-22
  */
 
-
+@Singleton
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Spieler> SpielerList;
-    private List<Team> TeamList;
-    private List<Sportarten> SportartenList;
-    private List<User> UserList;
+    private static List<Spieler> SpielerList;
+    private static List<Team> TeamList;
+    private static List<Sportarten> SportartenList;
+    private static List<User> UserList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setTeamList(new ArrayList<>());
-        readTeamJSON();
-        setSpielerList(new ArrayList<>());
-        readSpielerJSON();
-        setSportartenList(new ArrayList<>());
-        readSportartenJSON();
-        setUserList(new ArrayList<>());
-        readUserJSON();
+//        setTeamList(new ArrayList<>());
+//        readTeamJSON();
+//        setSpielerList(new ArrayList<>());
+//        readSpielerJSON();
+//        setSportartenList(new ArrayList<>());
+//        readSportartenJSON();
+//        setUserList(new ArrayList<>());
+//        readUserJSON();
     }
 
-    /**
-     * gets the only instance of this class
-     * @return instance
-     */
-    public static DataHandler getInstance() {
-        if (instance == null)
-            instance = new DataHandler();
-        return instance;
-    }
+//    /**
+//     * gets the only instance of this class
+//     * @return instance
+//     */
+//    public static DataHandler getInstance() {
+//        if (instance == null)
+//            instance = new DataHandler();
+//        return instance;
+//    }
 
     /**
      * reads all Spielers
      * @return list of Spielers
      */
-    public List<Spieler> readAllSpielers() {
+    public static List<Spieler> readAllSpielers() {
         return getSpielerList();
     }
 
@@ -65,7 +66,7 @@ public class DataHandler {
      * reads all SpielerByID
      * @return spieler
      */
-    public Spieler readSpielerByID(String spielerID) {
+    public static Spieler readSpielerByID(String spielerID) {
         Spieler spieler = null;
         for (Spieler entity : getSpielerList()) {
             if (entity.getSpielerID().equals(spielerID)) {
@@ -80,7 +81,7 @@ public class DataHandler {
      * reads all Sportarten
      * @return list of Sportarten
      */
-    public List<Sportarten> readAllSportarten() {
+    public static List<Sportarten> readAllSportarten() {
         return getSportartenList();
     }
 
@@ -88,7 +89,7 @@ public class DataHandler {
      * reads all SportartenByID
      * @return sportart
      */
-    public Sportarten readSportartByID(String sportartID) {
+    public static Sportarten readSportartByID(String sportartID) {
         Sportarten sportart = null;
         for (Sportarten entity : getSportartenList()) {
             if (entity.getSportartID().equals(sportartID)) {
@@ -102,7 +103,7 @@ public class DataHandler {
      * reads all Teams
      * @return list of Teams
      */
-    public List<Team> readAllTeams() {
+    public static List<Team> readAllTeams() {
         return getTeamList();
     }
 
@@ -111,7 +112,7 @@ public class DataHandler {
      * reads all TeamsByID
      * @return team
      */
-    public Team readTeamByID(String teamID) {
+    public static Team readTeamByID(String teamID) {
         Team team = null;
         for (Team entity : getTeamList()) {
             if (entity.getTeamID().equals(teamID)) {
@@ -125,7 +126,7 @@ public class DataHandler {
      * reads all Users
      * @return list of Users
      */
-    public List<User> readAllUser(){
+    public static List<User> readAllUser(){
         return getUserList();
     }
 
@@ -133,7 +134,7 @@ public class DataHandler {
      * reads all UsersByID
      * @return user
      */
-    public User readUserByID(String userID) {
+    public static User readUserByID(String userID) {
         User user = null;
         for (User entity : getUserList()) {
             if (entity.getUserUUID().equals(userID)) {
@@ -146,7 +147,7 @@ public class DataHandler {
     /**
      * reads the Spielers from the JSON-file
      */
-    private void readSpielerJSON() {
+    private static void readSpielerJSON() {
         try {
             String path = Config.getProperty("SpielerJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -165,7 +166,7 @@ public class DataHandler {
     /**
      * reads the Teams from the JSON-file
      */
-    private void readTeamJSON() {
+    private static void readTeamJSON() {
         try {
             String path = Config.getProperty("TeamJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -184,7 +185,7 @@ public class DataHandler {
     /**
      * reads the Sportarten from the JSON-file
      */
-    private void readSportartenJSON() {
+    private static void readSportartenJSON() {
         try {
             String path = Config.getProperty("SportartJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -203,7 +204,7 @@ public class DataHandler {
     /**
      * reads the User from the JSON-file
      */
-    private void readUserJSON() {
+    private static void readUserJSON() {
         try {
             String path = Config.getProperty("UserJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -224,7 +225,7 @@ public class DataHandler {
      *
      * @return value of TeamList
      */
-    private List<Team> getTeamList() {
+    private static List<Team> getTeamList() {
         return TeamList;
     }
 
@@ -243,7 +244,7 @@ public class DataHandler {
      *
      * @return  value of SpielerList
      */
-    private List<Spieler> getSpielerList() {
+    private static List<Spieler> getSpielerList() {
         return SpielerList;
     }
 
@@ -261,7 +262,7 @@ public class DataHandler {
      *
      * @return value of SportartenList
      */
-    private List<Sportarten> getSportartenList() {
+    private static List<Sportarten> getSportartenList() {
         return SportartenList;
     }
 
@@ -279,7 +280,7 @@ public class DataHandler {
      *
      * @return value of UserList
      */
-    private List<User> getUserList() {
+    private static List<User> getUserList() {
         return UserList;
     }
 
