@@ -34,25 +34,9 @@ public class DataHandler {
      * private constructor defeats instantiation
      */
     private DataHandler() {
-//        setTeamList(new ArrayList<>());
-//        readTeamJSON();
-//        setSpielerList(new ArrayList<>());
-//        readSpielerJSON();
-//        setSportartenList(new ArrayList<>());
-//        readSportartenJSON();
-//        setUserList(new ArrayList<>());
-//        readUserJSON();
+
     }
 
-//    /**
-//     * gets the only instance of this class
-//     * @return instance
-//     */
-//    public static DataHandler getInstance() {
-//        if (instance == null)
-//            instance = new DataHandler();
-//        return instance;
-//    }
 
     /**
      * reads all Spielers
