@@ -24,7 +24,6 @@ import java.util.List;
 
 @Singleton
 public class DataHandler {
-    private static DataHandler instance = null;
     private static List<Spieler> SpielerList;
     private static List<Team> TeamList;
     private static List<Sportarten> SportartenList;
@@ -210,6 +209,11 @@ public class DataHandler {
      * @return value of TeamList
      */
     private static List<Team> getTeamList() {
+
+        if (DataHandler.TeamList == null) {
+            DataHandler.setTeamList(new ArrayList<>());
+            readTeamJSON();
+        }
         return TeamList;
     }
 
@@ -218,8 +222,8 @@ public class DataHandler {
      *
      * @param TeamList the value of TeamList
      */
-    private void setTeamList(List<Team> TeamList) {
-        this.TeamList = TeamList;
+    private static void setTeamList(List<Team> TeamList) {
+        DataHandler.TeamList = TeamList;
     }
 
 
@@ -229,6 +233,11 @@ public class DataHandler {
      * @return  value of SpielerList
      */
     private static List<Spieler> getSpielerList() {
+
+        if (DataHandler.SpielerList == null) {
+            DataHandler.setSpielerList(new ArrayList<>());
+            readSpielerJSON();
+        }
         return SpielerList;
     }
 
@@ -237,8 +246,8 @@ public class DataHandler {
      *
      * @param SpielerList the value to set
      */
-    private void setSpielerList(List<Spieler> SpielerList) {
-        this.SpielerList = SpielerList;
+    private static void setSpielerList(List<Spieler> SpielerList) {
+        DataHandler.SpielerList = SpielerList;
     }
 
     /**
@@ -247,6 +256,11 @@ public class DataHandler {
      * @return value of SportartenList
      */
     private static List<Sportarten> getSportartenList() {
+
+        if (DataHandler.SportartenList == null) {
+            DataHandler.setSportartenList(new ArrayList<>());
+            readSportartenJSON();
+        }
         return SportartenList;
     }
 
@@ -255,8 +269,8 @@ public class DataHandler {
      *
      * @param SportartenList the value to set
      */
-    private void setSportartenList(List<Sportarten> SportartenList) {
-        this.SportartenList = SportartenList;
+    private static void setSportartenList(List<Sportarten> SportartenList) {
+        DataHandler.SportartenList = SportartenList;
     }
 
     /**
@@ -265,6 +279,10 @@ public class DataHandler {
      * @return value of UserList
      */
     private static List<User> getUserList() {
+        if (DataHandler.UserList == null) {
+            DataHandler.setUserList(new ArrayList<>());
+            readUserJSON();
+        }
         return UserList;
     }
 
@@ -273,7 +291,7 @@ public class DataHandler {
      *
      * @param UserList the value to set
      */
-    private void setUserList(List<User> UserList) {
-        this.UserList = UserList;
+    private static void setUserList(List<User> UserList) {
+        DataHandler.UserList = UserList;
     }
 }
