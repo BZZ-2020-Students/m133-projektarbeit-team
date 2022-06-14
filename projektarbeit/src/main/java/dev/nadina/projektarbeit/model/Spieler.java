@@ -1,10 +1,7 @@
 package dev.nadina.projektarbeit.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import dev.nadina.projektarbeit.data.DataHandler;
-
 /**
- * @Beschreibung
+ * Daten und Methoden für einen Spieler
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0

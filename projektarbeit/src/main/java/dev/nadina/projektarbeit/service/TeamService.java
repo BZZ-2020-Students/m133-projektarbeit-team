@@ -1,7 +1,6 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Team;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
@@ -12,7 +11,7 @@ import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 /**
- * @Beschreibung
+ * ServiceKlasse für die Team
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0
@@ -29,7 +28,7 @@ public class TeamService {
      * @param String teamID
      */
     public Response listTeam(){
-        List<Team> TeamList = DataHandler.getInstance().readAllTeams();
+        List<Team> TeamList = DataHandler.readAllTeams();
         return Response
                 .status(200)
                 .entity(TeamList)
@@ -47,7 +46,7 @@ public class TeamService {
             @QueryParam("id") String teamID
     ){
         int httpStatus = 200;
-        Team team = DataHandler.getInstance().readTeamByID(teamID);
+        Team team = DataHandler.readTeamByID(teamID);
         if(team == null){
             httpStatus = 410;
         }

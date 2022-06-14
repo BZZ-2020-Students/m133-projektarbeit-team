@@ -1,7 +1,7 @@
 package dev.nadina.projektarbeit.model;
 
 /**
- * @Beschreibung
+ * Daten für ein Team
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0

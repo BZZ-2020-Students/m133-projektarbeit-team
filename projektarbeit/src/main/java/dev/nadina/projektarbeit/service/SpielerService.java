@@ -11,6 +11,8 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 
 /**
+ * ServiceKlasse für Spieler
+ *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0
  * @since   2022-05-20
@@ -25,7 +27,7 @@ public class SpielerService {
      *  @param String spielerID
      */
     public Response listSpieler(){
-        List<Spieler> SpielerList = DataHandler.getInstance().readAllSpielers();
+        List<Spieler> SpielerList = DataHandler.readAllSpielers();
         return Response
                 .status(200)
                 .entity(SpielerList)
@@ -43,7 +45,7 @@ public class SpielerService {
             @QueryParam("id") String spielerID
     ){
         int httpStatus = 200;
-        Spieler spieler = DataHandler.getInstance().readSpielerByID(spielerID);
+        Spieler spieler = DataHandler.readSpielerByID(spielerID);
         if(spieler == null){
             httpStatus = 410;
         }

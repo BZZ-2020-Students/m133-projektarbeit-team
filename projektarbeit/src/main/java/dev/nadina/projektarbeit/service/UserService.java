@@ -1,36 +1,36 @@
 package dev.nadina.projektarbeit.service;
 
+
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Sportarten;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import dev.nadina.projektarbeit.model.Team;
+import dev.nadina.projektarbeit.model.User;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+
 /**
- * ServiceKlasse für Sportarten
+ * ServiceKlasse für User
  *
  * @author  Nadina Shirin Amlser (shirin197)
  * @version 1.0
  * @since   2022-05-20
  */
-@Path ("sportarten")
-public class SportartenService {
+@Path("user")
+public class UserService {
     @Path("list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     /**
      * @return Response
-     * @param String sportartenID
+     * @param teamUUID
      */
-    public Response listSportart(){
-        List<Sportarten> SportartList = DataHandler.readAllSportarten();
+    public Response listUser(){
+        List<User> UserList = DataHandler.readAllUser();
         return Response
                 .status(200)
-                .entity(SportartList)
+                .entity(UserList)
                 .build();
     }
 
@@ -39,19 +39,19 @@ public class SportartenService {
     @Produces(MediaType.APPLICATION_JSON)
     /**
      * @return Response
-     * @param String sportartenID
+     * @param userUUID
      */
-    public Response readSpieler(
-            @QueryParam("id") String sportartID
-    ){
+    public Response getUser(
+            @QueryParam("id") String userUUID
+    ) {
         int httpStatus = 200;
-        Sportarten sportart = DataHandler.readSportartByID(sportartID);
-        if(sportart == null){
+        User user = DataHandler.readUserByID(userUUID);
+        if(user == null){
             httpStatus = 410;
         }
         return Response
                 .status(httpStatus)
-                .entity(sportart)
+                .entity(user)
                 .build();
     }
 }
