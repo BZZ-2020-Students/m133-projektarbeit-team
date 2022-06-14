@@ -22,12 +22,4 @@
   "spielernr" : 33,
   "position" : "Hintenmitte",
   "captain" : false
-}, {
-  "spielerID" : "fsd",
-  "name" : "sdfsdf",
-  "vorname" : "dsfsdfa",
-  "geburtsdatum" : "sdf",
-  "spielernr" : 134,
-  "position" : "sssdsafdsa",
-  "captain" : false
 } ]

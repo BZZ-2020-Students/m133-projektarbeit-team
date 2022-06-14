@@ -1,29 +1,33 @@
-[
-  {
-    "name": "Harper",
-    "vorname": "Donald",
-    "geburtsdatum":"30.10.2004",
-    "spielernr": 19,
-    "spielerID": "1",
-    "position": "Rechterflügel",
-    "captain": false
-  },
-  {
-    "name": "Ingeman",
-    "vorname": "Alice",
-    "geburtsdatum":"28.07.2005",
-    "spielernr": 12,
-    "spielerID": "2",
-    "position": "Goalie",
-    "captain": true
-  },
-  {
-    "name": "Roth",
-    "vorname": "Julia",
-    "geburtsdatum":"19.03.2004",
-    "spielernr": 33,
-    "spielerID": "3",
-    "position": "Hintenmitte",
-    "captain": false
-  }
-]
+[ {
+  "spielerID" : "1",
+  "name" : "Harper",
+  "vorname" : "Donald",
+  "geburtsdatum" : "30.10.2004",
+  "spielernr" : 19,
+  "position" : "Rechterflügel",
+  "captain" : false
+}, {
+  "spielerID" : "2",
+  "name" : "Ingeman",
+  "vorname" : "Alice",
+  "geburtsdatum" : "28.07.2005",
+  "spielernr" : 12,
+  "position" : "Goalie",
+  "captain" : true
+}, {
+  "spielerID" : "3",
+  "name" : "Roth",
+  "vorname" : "Julia",
+  "geburtsdatum" : "19.03.2004",
+  "spielernr" : 33,
+  "position" : "Hintenmitte",
+  "captain" : false
+}, {
+  "spielerID" : "fsd",
+  "name" : "sdfsdf",
+  "vorname" : "dsfsdfa",
+  "geburtsdatum" : "sdf",
+  "spielernr" : 134,
+  "position" : "sssdsafdsa",
+  "captain" : false
+} ]

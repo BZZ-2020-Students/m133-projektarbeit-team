@@ -84,5 +84,21 @@ public class SpielerService {
                 .build();
     }
 
+    @Path("delete")
+    @DELETE
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteBook(
+            @QueryParam("id") String spielerID
+    ){
+        int httpStatus = 200;
+        if (DataHandler.deleteSpieler(spielerID)) {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Spieler erfolgreich gelöscht")
+                .build();
+    }
+
 
 }

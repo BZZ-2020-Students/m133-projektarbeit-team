@@ -39,9 +39,23 @@ public class DataHandler {
 
     }
 
+    /**
+     * reads the JSON-file with the spieler-data
+     */
     public static void insertSpieler(Spieler spieler) {
         getSpielerList().add(spieler);
         writeSpielerJSON();
+    }
+
+    public static boolean deleteSpieler(String spielerID) {
+        Spieler spieler = readSpielerByID(spielerID);
+        if (spieler != null) {
+            getSpielerList().remove(spieler);
+            writeSpielerJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
