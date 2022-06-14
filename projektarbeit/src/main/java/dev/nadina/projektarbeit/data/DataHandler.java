@@ -58,6 +58,10 @@ public class DataHandler {
         }
     }
 
+    public static void updateSpieler(){
+        writeSpielerJSON();
+    }
+
     /**
      * reads all Spielers
      * @return list of Spielers

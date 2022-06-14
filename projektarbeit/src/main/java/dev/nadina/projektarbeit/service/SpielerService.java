@@ -5,6 +5,8 @@ import dev.nadina.projektarbeit.model.Spieler;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -97,6 +99,39 @@ public class SpielerService {
         return Response
                 .status(httpStatus)
                 .entity("Spieler erfolgreich gelöscht")
+                .build();
+    }
+
+    @Path("update")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateBook(
+            @FormParam("spielerID") String spielerID,
+            @FormParam("name") String name,
+            @FormParam("vorname") String vorname,
+            @FormParam("geburtsdatum") String geburtsdatum,
+            @FormParam("position") String position,
+            @FormParam("spielernr") Integer spielernr,
+            @FormParam("captain") Boolean captain
+    ){
+        int httpStatus = 200;
+        Spieler spieler = DataHandler.readSpielerByID(spielerID);
+        if (spieler != null) {
+            spieler.setSpielerID(spielerID);
+            spieler.setName(name);
+            spieler.setVorname(vorname);
+            spieler.setGeburtsdatum(geburtsdatum);
+            spieler.setPosition(position);
+            spieler.setSpielernr(spielernr);
+            spieler.setCaptain(captain);
+
+            DataHandler.updateSpieler();
+        }else{
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Spieler erfolgreich aktualisiert")
                 .build();
     }
 
