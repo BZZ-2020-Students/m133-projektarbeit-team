@@ -1,6 +1,7 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
+import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
 import jakarta.ws.rs.*;
@@ -73,6 +74,47 @@ public class SportartenService {
         return Response
                 .status(httpStatus)
                 .entity("Sportarten erfolgreich angelegt!")
+                .build();
+    }
+
+    @Path("delete")
+    @DELETE
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteSporarten(
+            @QueryParam("id") String teamID
+    ){
+        int httpStatus = 200;
+        if (DataHandler.deleteSportart(teamID)) {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Team erfolgreich gelöscht")
+                .build();
+    }
+
+    @Path("update")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateSporart(
+            @FormParam("sportartID") String sportartID,
+            @FormParam("sportart") String sportart,
+            @FormParam("spieleranzahl") String spieleranzahl
+    ){
+        int httpStatus = 200;
+        Sportarten sa = DataHandler.readSportartByID(sportartID);
+        if (sa != null) {
+            sa.setSportartID(sportartID);
+            sa.setSportart(sportart);
+            sa.setSpieleranzahl(spieleranzahl);
+
+            DataHandler.updateSportart();
+        }else{
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Sportart erfolgreich aktualisiert")
                 .build();
     }
 }

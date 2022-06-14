@@ -178,6 +178,29 @@ public class DataHandler {
     }
 
     /**
+     * deletes a sportarten identified by the sportartenID
+     * @param sportartID
+     * @return  success=true/false
+     */
+    public static boolean deleteSportart (String sportartID) {
+        Sportarten sportarten = readSportartByID(sportartID);
+        if (sportarten != null) {
+            getSportartenList().remove(sportarten);
+            writeSportartenJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * updates a sportarten identified by the sportartenID
+     */
+    public static void updateSportart(){
+        writeSportartenJSON();
+    }
+
+    /**
      * reads all Sportarten
      * @return list of Sportarten
      */

@@ -1,12 +1,9 @@
-[
-  {
-    "sportartID": "1",
-  "sportart": "Handball",
-  "spieleranzahl": "7 Feldspieler"
-  },
-  {
-    "sportartID": "2",
-    "sportart": "Fussball",
-    "spieleranzahl": "11 Feldspieler"
-  }
-]
+[ {
+  "sportartID" : "1",
+  "sportart" : "Handball",
+  "spieleranzahl" : "7"
+}, {
+  "sportartID" : "2",
+  "sportart" : "Fussball",
+  "spieleranzahl" : "11"
+} ]

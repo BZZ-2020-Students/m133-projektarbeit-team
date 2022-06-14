@@ -1,13 +1,13 @@
 [ {
   "sportartID" : "1",
   "sportart" : "Handball",
-  "spieleranzahl" : "7 Feldspieler"
+  "spieleranzahl" : "7"
 }, {
   "sportartID" : "2",
   "sportart" : "Fussball",
-  "spieleranzahl" : "11 Feldspieler"
+  "spieleranzahl" : "11"
 }, {
   "sportartID" : "3",
-  "sportart" : "Tanzen",
-  "spieleranzahl" : "33 Vornemitte"
+  "sportart" : "Eishockey ",
+  "spieleranzahl" : "6"
 } ]
