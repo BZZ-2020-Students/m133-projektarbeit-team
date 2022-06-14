@@ -89,7 +89,7 @@ public class SpielerService {
     @Path("delete")
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
-    public Response deleteBook(
+    public Response deleteSpieler(
             @QueryParam("id") String spielerID
     ){
         int httpStatus = 200;
@@ -105,7 +105,7 @@ public class SpielerService {
     @Path("update")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public Response updateBook(
+    public Response updateSpieler(
             @FormParam("spielerID") String spielerID,
             @FormParam("name") String name,
             @FormParam("vorname") String vorname,
@@ -134,6 +134,4 @@ public class SpielerService {
                 .entity("Spieler erfolgreich aktualisiert")
                 .build();
     }
-
-
 }

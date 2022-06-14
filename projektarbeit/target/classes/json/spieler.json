@@ -8,12 +8,12 @@
   "captain" : false
 }, {
   "spielerID" : "2",
-  "name" : "Ingeman",
+  "name" : "Harper",
   "vorname" : "Alice",
-  "geburtsdatum" : "28.07.2005",
-  "spielernr" : 12,
-  "position" : "Goalie",
-  "captain" : true
+  "geburtsdatum" : "29.06.2004",
+  "spielernr" : 14,
+  "position" : "Linkerflügel",
+  "captain" : false
 }, {
   "spielerID" : "3",
   "name" : "Roth",

@@ -39,14 +39,27 @@ public class DataHandler {
 
     }
 
+    /*================================================================= Spieler =================================================================
+     * insertSpieler
+     * deleteSpieler
+     * updateSpieler
+     * readAllSpieler
+     * readSpielerByID
+     * */
+
     /**
-     * reads the JSON-file with the spieler-data
+     * insert Spieler to SpielerList
      */
     public static void insertSpieler(Spieler spieler) {
         getSpielerList().add(spieler);
         writeSpielerJSON();
     }
 
+    /**
+     * deletes a spieler identified by the spielerID
+     * @param spielerID
+     * @return success=true/false
+     */
     public static boolean deleteSpieler(String spielerID) {
         Spieler spieler = readSpielerByID(spielerID);
         if (spieler != null) {
@@ -58,6 +71,9 @@ public class DataHandler {
         }
     }
 
+    /**
+     * updates a spieler identified by the spielerID
+     */
     public static void updateSpieler(){
         writeSpielerJSON();
     }
@@ -84,6 +100,82 @@ public class DataHandler {
         return spieler;
     }
 
+    /*================================================================= Team =================================================================
+     * insertTeam
+     * deleteTeam
+     * updateTeam
+     * readAllTeam
+     * readTeamByID
+     * */
+
+    /**
+     * insert Team to TeamList
+     */
+    public static void insertTeam(Team team) {
+        getTeamList().add(team);
+        writeTeamJSON();
+    }
+
+    /**
+     * deletes a team identified by the teamID
+     * @param teamID
+     * @return  success=true/false
+     */
+    public static boolean deleteTeam(String teamID) {
+        Team team = readTeamByID(teamID);
+        if (team != null) {
+            getTeamList().remove(team);
+            writeTeamJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * updates a team identified by the teamID
+     */
+    public static void updateTeam(){
+        writeTeamJSON();
+    }
+
+    /**
+     * reads all Teams
+     * @return list of Teams
+     */
+    public static List<Team> readAllTeams() {
+        return getTeamList();
+    }
+
+    /**
+     * reads all TeamsByID
+     * @return team
+     */
+    public static Team readTeamByID(String teamID) {
+        Team team = null;
+        for (Team entity : getTeamList()) {
+            if (entity.getTeamID().equals(teamID)) {
+                team = entity;
+            }
+        }
+        return team;
+    }
+
+    /*================================================================= Sportarten =================================================================
+     * insertSportarten
+     * deleteSportarten
+     * updateSportarten
+     * readAllSportarten
+     * readSportartenByID
+     * */
+
+    /**
+     * insert Team to TeamList
+     */
+    public static void insertSportarten(Sportarten sportarten) {
+        getSportartenList().add(sportarten);
+        writeSportartenJSON();
+    }
 
     /**
      * reads all Sportarten
@@ -107,28 +199,14 @@ public class DataHandler {
         return sportart;
     }
 
-    /**
-     * reads all Teams
-     * @return list of Teams
-     */
-    public static List<Team> readAllTeams() {
-        return getTeamList();
-    }
 
-
-    /**
-     * reads all TeamsByID
-     * @return team
-     */
-    public static Team readTeamByID(String teamID) {
-        Team team = null;
-        for (Team entity : getTeamList()) {
-            if (entity.getTeamID().equals(teamID)) {
-                team = entity;
-            }
-        }
-        return team;
-    }
+    /*================================================================= User =================================================================
+     * insertUser
+     * deleteUser
+     * updateUser
+     * readAllUser
+     * readUserByID
+     * */
 
     /**
      * reads all Users
@@ -152,6 +230,16 @@ public class DataHandler {
         return user;
     }
 
+    /*================================================================= WriteJSON =================================================================
+     * writeSpielerJSON,        readSpielerJSON
+     * writeTeamJSON,           readTeamJSON
+     * writeSportartenJSON,     readSportartenJSON
+     * writeUserJSON,           readUserJSON
+     * */
+
+    /**
+     * writes SpielerList to Spieler.json
+     */
     private static void writeSpielerJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
@@ -182,6 +270,44 @@ public class DataHandler {
             for (Spieler spieler : spielers) {
                 getSpielerList().add(spieler);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes TeamList to Team.json
+     */
+    private static void writeTeamJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("TeamJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getTeamList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes Sportarten to Sportarten.json
+     */
+    private static void writeSportartenJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("SportartJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getSportartenList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -246,7 +372,6 @@ public class DataHandler {
 
     /**
      * gets TeamList
-     *
      * @return value of TeamList
      */
     private static List<Team> getTeamList() {
@@ -260,17 +385,14 @@ public class DataHandler {
 
     /**
      * writes the Spielers to the JSON-file
-     *
      * @param TeamList the value of TeamList
      */
     private static void setTeamList(List<Team> TeamList) {
         DataHandler.TeamList = TeamList;
     }
 
-
     /**
      * sets SpielerList
-     *
      * @return  value of SpielerList
      */
     private static List<Spieler> getSpielerList() {
@@ -284,7 +406,6 @@ public class DataHandler {
 
     /**
      * sets SpielerList
-     *
      * @param SpielerList the value to set
      */
     private static void setSpielerList(List<Spieler> SpielerList) {
@@ -293,11 +414,9 @@ public class DataHandler {
 
     /**
      * gets SportartenList
-     *
      * @return value of SportartenList
      */
     private static List<Sportarten> getSportartenList() {
-
         if (DataHandler.SportartenList == null) {
             DataHandler.setSportartenList(new ArrayList<>());
             readSportartenJSON();
@@ -307,7 +426,6 @@ public class DataHandler {
 
     /**
      * sets SportartenList
-     *
      * @param SportartenList the value to set
      */
     private static void setSportartenList(List<Sportarten> SportartenList) {
@@ -316,7 +434,6 @@ public class DataHandler {
 
     /**
      * gets UserList
-     *
      * @return value of UserList
      */
     private static List<User> getUserList() {
@@ -329,7 +446,6 @@ public class DataHandler {
 
     /**
      * sets UserList
-     *
      * @param UserList the value to set
      */
     private static void setUserList(List<User> UserList) {

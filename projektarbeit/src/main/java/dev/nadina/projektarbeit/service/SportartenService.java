@@ -2,10 +2,8 @@ package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Sportarten;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import dev.nadina.projektarbeit.model.Team;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -52,6 +50,29 @@ public class SportartenService {
         return Response
                 .status(httpStatus)
                 .entity(sportart)
+                .build();
+    }
+
+    @Path("create")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertSportarten(
+            @FormParam("sportartID") String sportartID,
+            @FormParam("sportart") String sportart,
+            @FormParam("spieleranzahl") String spieleranzahl
+
+    ) {
+        Sportarten sa = new Sportarten();
+        sa.setSportartID(sportartID);
+        sa.setSportart(sportart);
+        sa.setSpieleranzahl(spieleranzahl);
+
+        DataHandler.insertSportarten(sa);
+
+        int httpStatus = 200;
+        return Response
+                .status(httpStatus)
+                .entity("Sportarten erfolgreich angelegt!")
                 .build();
     }
 }

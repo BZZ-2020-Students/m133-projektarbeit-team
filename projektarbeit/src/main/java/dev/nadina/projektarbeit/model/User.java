@@ -1,4 +1,5 @@
 package dev.nadina.projektarbeit.model;
+
 /**
  * Daten und Methoden für den User
  *
@@ -6,6 +7,8 @@ package dev.nadina.projektarbeit.model;
  * @version 1.0
  * @since   2022-05-20
  */
+
+
 public class User {
     private String userUUID;
     private String userName;

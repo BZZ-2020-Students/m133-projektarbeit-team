@@ -1,5 +1,6 @@
 package dev.nadina.projektarbeit.model;
 
+
 /**
  * Daten für ein Team
  *
@@ -7,13 +8,14 @@ package dev.nadina.projektarbeit.model;
  * @version 1.0
  * @since   2022-05-20
  */
+
 public class Team {
 
     /**
      * Attribute
      */
     private String teamID;
-    private String team;
+    private String teamname;
     private String gruendungsdatum;
 
     /**
@@ -57,18 +59,18 @@ public class Team {
 
     /**
      * @Getter
-     * @return the team
+     * @return the teamname
      */
-    public String getTeam() {
-        return team;
+    public String getTeamname() {
+        return teamname;
     }
 
     /**
      * @Setter
-     * @param team the team to set
+     * @param teamname the team to set
      */
-    public void setTeam(String team) {
-        this.team = team;
+    public void setTeamname(String teamname) {
+        this.teamname = teamname;
     }
 
     /**

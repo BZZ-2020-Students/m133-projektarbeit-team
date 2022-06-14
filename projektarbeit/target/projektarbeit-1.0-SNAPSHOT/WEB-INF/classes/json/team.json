@@ -1,7 +1,9 @@
-[
-  {
-    "teamID": "1",
-    "team": "Team 1",
-    "gruendungsdatum":  "1946-01-01"
-  }
-]
+[ {
+  "teamID" : "2",
+  "teamname" : "teamred",
+  "gruendungsdatum" : "21.07.2001"
+}, {
+  "teamID" : "1",
+  "teamname" : "team1",
+  "gruendungsdatum" : "29.04.2001"
+} ]
