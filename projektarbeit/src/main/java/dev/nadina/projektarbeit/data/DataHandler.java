@@ -232,6 +232,37 @@ public class DataHandler {
      * */
 
     /**
+     * insert User to UserList
+     */
+    public static void insertUser(User user) {
+        getUserList().add(user);
+        writeUserJSON();
+    }
+
+    /**
+     * deletes a user identified by the userID
+     * @param userID
+     * @return  success=true/false
+     */
+    public static boolean deleteUser(String userID) {
+        User user = readUserByID(userID);
+        if (user != null) {
+            getUserList().remove(user);
+            writeUserJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * updates a user identified by the userID
+     */
+    public static void updateUser() {
+        writeUserJSON();
+    }
+
+    /**
      * reads all Users
      * @return list of Users
      */
@@ -318,25 +349,6 @@ public class DataHandler {
     }
 
     /**
-     * writes Sportarten to Sportarten.json
-     */
-    private static void writeSportartenJSON() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
-        FileOutputStream fileOutputStream = null;
-        Writer fileWriter;
-
-        String bookPath = Config.getProperty("SportartJSON");
-        try {
-            fileOutputStream = new FileOutputStream(bookPath);
-            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getSportartenList());
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    /**
      * reads the Teams from the JSON-file
      */
     private static void readTeamJSON() {
@@ -356,6 +368,25 @@ public class DataHandler {
     }
 
     /**
+     * writes Sportarten to Sportarten.json
+     */
+    private static void writeSportartenJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("SportartJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getSportartenList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
      * reads the Sportarten from the JSON-file
      */
     private static void readSportartenJSON() {
@@ -369,6 +400,22 @@ public class DataHandler {
             for (Sportarten sportart : sportarts) {
                 getSportartenList().add(sportart);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static void writeUserJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("UserJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter,getUserList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }

@@ -6,4 +6,8 @@
   "sportartID" : "2",
   "sportart" : "Fussball",
   "spieleranzahl" : "11"
+}, {
+  "sportartID" : "3",
+  "sportart" : "Eishockey ",
+  "spieleranzahl" : "6"
 } ]
