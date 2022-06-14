@@ -1,6 +1,8 @@
 package dev.nadina.projektarbeit.data;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
@@ -8,7 +10,8 @@ import dev.nadina.projektarbeit.model.User;
 import dev.nadina.projektarbeit.service.Config;
 import jakarta.inject.Singleton;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -35,6 +38,11 @@ public class DataHandler {
      */
     private DataHandler() {
 
+    }
+
+    public static void insertSpieler(Spieler Spieler) {
+        getSpielerList().add(Spieler);
+        writeSpielerJSON();
     }
 
 
@@ -126,6 +134,25 @@ public class DataHandler {
             }
         }
         return user;
+    }
+
+    /**
+     * reads the JSON-file with the book-data
+     */
+    private static void writeSpielerJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("SpielerJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getSpielerList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**

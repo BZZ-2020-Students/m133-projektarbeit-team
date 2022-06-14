@@ -2,10 +2,7 @@ package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Spieler;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.util.List;
@@ -54,6 +51,36 @@ public class SpielerService {
         return Response
                 .status(httpStatus)
                 .entity(spieler)
+                .build();
+    }
+
+    @Path("create")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertSpieler(
+            @FormParam("spielerID") String spielerID,
+            @FormParam("name") String name,
+            @FormParam("vorname") String vorname,
+            @FormParam("geburtsdatum") String geburtsdatum,
+            @FormParam("position") String position,
+            @FormParam("spielernr") Integer spielernr,
+            @FormParam("captain") Boolean captain
+    ) {
+        Spieler spieler =  new Spieler();
+        spieler.setSpielerID(spielerID);
+        spieler.setName(name);
+        spieler.setVorname(vorname);
+        spieler.setGeburtsdatum(geburtsdatum);
+        spieler.setPosition(position);
+        spieler.setSpielernr(spielernr);
+        spieler.setCaptain(captain);
+
+        DataHandler.insertSpieler(spieler);
+
+        int httpStatus = 200;
+        return Response
+                .status(httpStatus)
+                .entity("Spieler wurde erfolgreich hinzugefügt")
                 .build();
     }
 

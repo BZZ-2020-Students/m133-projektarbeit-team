@@ -8,7 +8,6 @@ package dev.nadina.projektarbeit.model;
  * @since   2022-05-20
  */
 public class Spieler {
-
     /**
      * Attribute
      */
