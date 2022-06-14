@@ -5,7 +5,7 @@ package dev.nadina.projektarbeit.model;
  * Daten für ein Team
  *
  * @author  Nadina Shirin Amlser (shirin197)
- * @version 1.0
+ * @version 2.0
  * @since   2022-05-20
  */
 
