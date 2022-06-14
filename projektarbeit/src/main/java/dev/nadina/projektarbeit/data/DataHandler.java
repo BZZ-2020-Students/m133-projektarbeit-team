@@ -1,8 +1,6 @@
 package dev.nadina.projektarbeit.data;
 
-import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
@@ -10,8 +8,7 @@ import dev.nadina.projektarbeit.model.User;
 import dev.nadina.projektarbeit.service.Config;
 import jakarta.inject.Singleton;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -27,7 +24,6 @@ import java.util.List;
 
 @Singleton
 public class DataHandler {
-    private static DataHandler instance = null;
     private static List<Spieler> SpielerList;
     private static List<Team> TeamList;
     private static List<Sportarten> SportartenList;
@@ -38,11 +34,6 @@ public class DataHandler {
      */
     private DataHandler() {
 
-    }
-
-    public static void insertSpieler(Spieler Spieler) {
-        getSpielerList().add(Spieler);
-        writeSpielerJSON();
     }
 
 
@@ -137,25 +128,6 @@ public class DataHandler {
     }
 
     /**
-     * reads the JSON-file with the book-data
-     */
-    private static void writeSpielerJSON() {
-        ObjectMapper objectMapper = new ObjectMapper();
-        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
-        FileOutputStream fileOutputStream = null;
-        Writer fileWriter;
-
-        String bookPath = Config.getProperty("SpielerJSON");
-        try {
-            fileOutputStream = new FileOutputStream(bookPath);
-            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getSpielerList());
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
-    }
-
-    /**
      * reads the Spielers from the JSON-file
      */
     private static void readSpielerJSON() {
@@ -237,6 +209,11 @@ public class DataHandler {
      * @return value of TeamList
      */
     private static List<Team> getTeamList() {
+
+        if (DataHandler.TeamList == null) {
+            DataHandler.setTeamList(new ArrayList<>());
+            readTeamJSON();
+        }
         return TeamList;
     }
 
@@ -245,8 +222,8 @@ public class DataHandler {
      *
      * @param TeamList the value of TeamList
      */
-    private void setTeamList(List<Team> TeamList) {
-        this.TeamList = TeamList;
+    private static void setTeamList(List<Team> TeamList) {
+        DataHandler.TeamList = TeamList;
     }
 
 
@@ -256,6 +233,11 @@ public class DataHandler {
      * @return  value of SpielerList
      */
     private static List<Spieler> getSpielerList() {
+
+        if (DataHandler.SpielerList == null) {
+            DataHandler.setSpielerList(new ArrayList<>());
+            readSpielerJSON();
+        }
         return SpielerList;
     }
 
@@ -264,8 +246,8 @@ public class DataHandler {
      *
      * @param SpielerList the value to set
      */
-    private void setSpielerList(List<Spieler> SpielerList) {
-        this.SpielerList = SpielerList;
+    private static void setSpielerList(List<Spieler> SpielerList) {
+        DataHandler.SpielerList = SpielerList;
     }
 
     /**
@@ -274,6 +256,11 @@ public class DataHandler {
      * @return value of SportartenList
      */
     private static List<Sportarten> getSportartenList() {
+
+        if (DataHandler.SportartenList == null) {
+            DataHandler.setSportartenList(new ArrayList<>());
+            readSportartenJSON();
+        }
         return SportartenList;
     }
 
@@ -282,8 +269,8 @@ public class DataHandler {
      *
      * @param SportartenList the value to set
      */
-    private void setSportartenList(List<Sportarten> SportartenList) {
-        this.SportartenList = SportartenList;
+    private static void setSportartenList(List<Sportarten> SportartenList) {
+        DataHandler.SportartenList = SportartenList;
     }
 
     /**
@@ -292,6 +279,10 @@ public class DataHandler {
      * @return value of UserList
      */
     private static List<User> getUserList() {
+        if (DataHandler.UserList == null) {
+            DataHandler.setUserList(new ArrayList<>());
+            readUserJSON();
+        }
         return UserList;
     }
 
@@ -300,7 +291,7 @@ public class DataHandler {
      *
      * @param UserList the value to set
      */
-    private void setUserList(List<User> UserList) {
-        this.UserList = UserList;
+    private static void setUserList(List<User> UserList) {
+        DataHandler.UserList = UserList;
     }
 }
