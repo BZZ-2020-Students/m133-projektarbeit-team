@@ -3,6 +3,10 @@ package dev.nadina.projektarbeit.service;
 import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Team;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -61,8 +65,14 @@ public class TeamService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTeam(
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("teamID") String teamID,
+
+            @NotEmpty
+            @Size(min = 3, max = 40)
             @FormParam("teamname") String teamname,
+
+            @NotEmpty
             @FormParam("gruendungsdatum") String gruendungsdatum
 
     ) {
@@ -84,6 +94,8 @@ public class TeamService {
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTeam(
+            @NotEmpty
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("id") String teamID
     ){
         int httpStatus = 200;
@@ -100,21 +112,17 @@ public class TeamService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTeam(
-            @FormParam("teamID") String teamID,
-            @FormParam("teamname") String teamname,
-            @FormParam("gruendungsdatum") String gruendungsdatum
+            @Valid @BeanParam Team t
     ){
-        int httpStatus = 200;
-        Team team = DataHandler.readTeamByID(teamID);
-        if (team != null) {
-            team.setTeamID(teamID);
-            team.setTeamname(teamname);
-            team.setGruendungsdatum(gruendungsdatum);
+        Team team = DataHandler.readTeamByID(t.getTeamID());
+        team.setTeamID(t.getTeamID());
+        team.setTeamname(t.getTeamname());
+        team.setGruendungsdatum(t.getGruendungsdatum());
 
-            DataHandler.updateTeam();
-        }else{
-            httpStatus = 410;
-        }
+        DataHandler.updateTeam();
+
+
+        int httpStatus = 200;
         return Response
                 .status(httpStatus)
                 .entity("Team erfolgreich aktualisiert!")

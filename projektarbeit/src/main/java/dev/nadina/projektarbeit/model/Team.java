@@ -1,6 +1,11 @@
 package dev.nadina.projektarbeit.model;
 
 
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import jakarta.ws.rs.FormParam;
+
 /**
  * Daten für ein Team
  *
@@ -14,8 +19,17 @@ public class Team {
     /**
      * Attribute
      */
+    @FormParam("teamID")
+    @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
     private String teamID;
+
+    @FormParam("teamname")
+    @NotEmpty
+    @Size(min = 3, max = 40)
     private String teamname;
+
+    @FormParam("gruendungsdatum")
+    @NotEmpty
     private String gruendungsdatum;
 
     /**
