@@ -1,4 +1,8 @@
 package dev.nadina.projektarbeit.model;
+
+import jakarta.validation.constraints.*;
+import jakarta.ws.rs.FormParam;
+
 /**
  * Daten und Methoden für die Sportarten
  *
@@ -11,9 +15,19 @@ public class Sportarten {
     /**
      * Attribute
      */
+    @FormParam("spartenID")
+    @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
     private String sportartID;
+
+    @FormParam("sportart")
+    @NotEmpty
+    @Size(min = 3, max = 40)
     private String sportart;
-    private String spieleranzahl;
+
+    @FormParam("spieleranzahl")
+    @Max(999)
+    @Min(1)
+    private Integer spieleranzahl;
 
 
     /**
@@ -75,7 +89,7 @@ public class Sportarten {
      * @Getter
      * @return the spieleranzahl
      */
-    public String getSpieleranzahl() {
+    public Integer getSpieleranzahl() {
         return spieleranzahl;
     }
 
@@ -83,7 +97,7 @@ public class Sportarten {
      * @Setter
      * @param spieleranzahl the spieleranzahl to set
      */
-    public void setSpieleranzahl(String spieleranzahl) {
+    public void setSpieleranzahl(Integer spieleranzahl) {
         this.spieleranzahl = spieleranzahl;
     }
 }

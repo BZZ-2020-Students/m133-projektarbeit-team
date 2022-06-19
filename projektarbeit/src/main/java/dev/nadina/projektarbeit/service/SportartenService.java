@@ -4,6 +4,8 @@ import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
 import dev.nadina.projektarbeit.model.Team;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -58,9 +60,16 @@ public class SportartenService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertSportarten(
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("sportartID") String sportartID,
+
+            @NotEmpty
+            @Size(min = 3, max = 40)
             @FormParam("sportart") String sportart,
-            @FormParam("spieleranzahl") String spieleranzahl
+
+            @Max(999)
+            @Min(1)
+            @FormParam("spieleranzahl") Integer spieleranzahl
 
     ) {
         Sportarten sa = new Sportarten();
@@ -81,6 +90,8 @@ public class SportartenService {
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteSporarten(
+            @NotEmpty
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("id") String teamID
     ){
         int httpStatus = 200;
@@ -97,21 +108,15 @@ public class SportartenService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateSporart(
-            @FormParam("sportartID") String sportartID,
-            @FormParam("sportart") String sportart,
-            @FormParam("spieleranzahl") String spieleranzahl
+            @Valid @BeanParam Sportarten sarex
     ){
-        int httpStatus = 200;
-        Sportarten sa = DataHandler.readSportartByID(sportartID);
-        if (sa != null) {
-            sa.setSportartID(sportartID);
-            sa.setSportart(sportart);
-            sa.setSpieleranzahl(spieleranzahl);
+        Sportarten sa = DataHandler.readSportartByID(sarex.getSportartID());
+        sa.setSportartID(sarex.getSportartID());
+        sa.setSportart(sarex.getSportart());
+        sa.setSpieleranzahl(sarex.getSpieleranzahl());
 
-            DataHandler.updateSportart();
-        }else{
-            httpStatus = 410;
-        }
+        DataHandler.updateSportart();
+        int httpStatus = 200;
         return Response
                 .status(httpStatus)
                 .entity("Sportart erfolgreich aktualisiert")

@@ -1,25 +1,17 @@
 [ {
-  "spielerID" : "f2095f89",
-  "name" : "Harper",
-  "vorname" : "Millie",
-  "geburtsdatum" : "30.10.2005",
-  "spielernr" : 89,
-  "position" : "Linkerflügel",
-  "captain" : true
-}, {
-  "spielerID" : "f2345f34",
-  "name" : "Harper",
-  "vorname" : "Alice",
-  "geburtsdatum" : "29.06.2004",
-  "spielernr" : 14,
-  "position" : "Linkerflügel",
-  "captain" : false
-}, {
-  "spielerID" : "1",
+  "spielerID" : "bd0a3893-64bb-47b9-b37c-ca2f9f05dff8",
   "name" : "Harper",
   "vorname" : "Miles",
   "geburtsdatum" : "30.10.2005",
   "spielernr" : 89,
   "position" : "Linkerflügel",
-  "captain" : true
+  "captain" : false
+}, {
+  "spielerID" : "bd1a3456-64bb-47b9-b37c-ca2f9f05dff8",
+  "name" : "Harper",
+  "vorname" : "Miles",
+  "geburtsdatum" : "30.10.2005",
+  "spielernr" : 89,
+  "position" : "Linkerflügel",
+  "captain" : false
 } ]

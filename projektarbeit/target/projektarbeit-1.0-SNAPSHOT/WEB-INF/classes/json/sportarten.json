@@ -1,13 +1,13 @@
 [ {
-  "sportartID" : "1",
+  "sportartID" : "2345aB56-6I8l-47b9-er3t-cfasdfa89wwe",
+  "sportart" : "Basketball",
+  "spieleranzahl" : 5
+}, {
+  "sportartID" : "14055c19-56ba-4190-8d2d-d40584682bdc",
+  "sportart" : "Basketball",
+  "spieleranzahl" : 5
+}, {
+  "sportartID" : "5b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
   "sportart" : "Handball",
-  "spieleranzahl" : "7"
-}, {
-  "sportartID" : "2",
-  "sportart" : "Fussball",
-  "spieleranzahl" : "11"
-}, {
-  "sportartID" : "3",
-  "sportart" : "Eishockey ",
-  "spieleranzahl" : "6"
+  "spieleranzahl" : 7
 } ]
