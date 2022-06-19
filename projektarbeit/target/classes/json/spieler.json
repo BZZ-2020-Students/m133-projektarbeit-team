@@ -1,13 +1,13 @@
 [ {
-  "spielerID" : "1",
+  "spielerID" : "f2095f89",
   "name" : "Harper",
-  "vorname" : "Donald",
-  "geburtsdatum" : "30.10.2004",
-  "spielernr" : 19,
-  "position" : "Rechterflügel",
-  "captain" : false
+  "vorname" : "Millie",
+  "geburtsdatum" : "30.10.2005",
+  "spielernr" : 89,
+  "position" : "Linkerflügel",
+  "captain" : true
 }, {
-  "spielerID" : "2",
+  "spielerID" : "f2345f34",
   "name" : "Harper",
   "vorname" : "Alice",
   "geburtsdatum" : "29.06.2004",
@@ -15,11 +15,11 @@
   "position" : "Linkerflügel",
   "captain" : false
 }, {
-  "spielerID" : "3",
-  "name" : "Roth",
-  "vorname" : "Julia",
-  "geburtsdatum" : "19.03.2004",
-  "spielernr" : 33,
-  "position" : "Hintenmitte",
-  "captain" : false
+  "spielerID" : "1",
+  "name" : "Harper",
+  "vorname" : "Miles",
+  "geburtsdatum" : "30.10.2005",
+  "spielernr" : 89,
+  "position" : "Linkerflügel",
+  "captain" : true
 } ]

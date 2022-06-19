@@ -2,6 +2,9 @@ package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Spieler;
+import dev.nadina.projektarbeit.model.Team;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -60,12 +63,29 @@ public class SpielerService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertSpieler(
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @FormParam("spielerID") String spielerID,
+
+            @NotEmpty
+            @Size(min = 3, max = 40)
             @FormParam("name") String name,
+
+            @NotEmpty
+            @Size(min = 3, max = 40)
             @FormParam("vorname") String vorname,
+
+            @NotEmpty
             @FormParam("geburtsdatum") String geburtsdatum,
+
+            @NotEmpty
+            @Size(min = 3, max = 50)
             @FormParam("position") String position,
+
+            @Max(999)
+            @Min(0)
             @FormParam("spielernr") Integer spielernr,
+
+            @NotNull
             @FormParam("captain") Boolean captain
     ) {
         Spieler spieler =  new Spieler();
@@ -90,6 +110,8 @@ public class SpielerService {
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteSpieler(
+            @NotEmpty
+            @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
             @QueryParam("id") String spielerID
     ){
         int httpStatus = 200;
@@ -106,32 +128,24 @@ public class SpielerService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateSpieler(
-            @FormParam("spielerID") String spielerID,
-            @FormParam("name") String name,
-            @FormParam("vorname") String vorname,
-            @FormParam("geburtsdatum") String geburtsdatum,
-            @FormParam("position") String position,
-            @FormParam("spielernr") Integer spielernr,
-            @FormParam("captain") Boolean captain
+            @Valid @BeanParam Spieler s
     ){
-        int httpStatus = 200;
-        Spieler spieler = DataHandler.readSpielerByID(spielerID);
-        if (spieler != null) {
-            spieler.setSpielerID(spielerID);
-            spieler.setName(name);
-            spieler.setVorname(vorname);
-            spieler.setGeburtsdatum(geburtsdatum);
-            spieler.setPosition(position);
-            spieler.setSpielernr(spielernr);
-            spieler.setCaptain(captain);
 
-            DataHandler.updateSpieler();
-        }else{
-            httpStatus = 410;
-        }
+        Spieler spieler = DataHandler.readSpielerByID(s.getSpielerID());
+        spieler.setSpielerID(s.getSpielerID());
+        spieler.setName(s.getName());
+        spieler.setVorname(s.getVorname());
+        spieler.setGeburtsdatum(s.getGeburtsdatum());
+        spieler.setPosition(s.getPosition());
+        spieler.setSpielernr(s.getSpielernr());
+        spieler.setCaptain(s.getCaptain());
+
+        DataHandler.updateSpieler();
+        int httpStatus = 200;
         return Response
                 .status(httpStatus)
-                .entity("Spieler erfolgreich aktualisiert")
+                .entity("Team erfolgreich aktualisiert!")
                 .build();
     }
 }
+

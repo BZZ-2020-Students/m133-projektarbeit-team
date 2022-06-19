@@ -1,5 +1,8 @@
 package dev.nadina.projektarbeit.model;
 
+import jakarta.validation.constraints.*;
+import jakarta.ws.rs.FormParam;
+
 /**
  * Daten und Methoden für einen Spieler
  *
@@ -11,12 +14,36 @@ public class Spieler {
     /**
      * Attribute
      */
+    @FormParam("spielerID")
+    @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
     private String spielerID;
+
+    @FormParam("name")
+    @NotEmpty
+    @Size(min = 3, max = 40)
     private String name;
+
+    @FormParam("vorname")
+    @NotEmpty
+    @Size(min = 3, max = 40)
     private String vorname;
+
+    @FormParam("geburtstag")
+    @NotEmpty
     private String geburtsdatum;
+
+    @FormParam("spielernr")
+    @Max(999)
+    @Min(0)
     private Integer spielernr;
+
+    @FormParam("position")
+    @NotEmpty
+    @Size(min = 3, max = 50)
     private String position;
+
+    @FormParam("captain")
+    @NotNull
     private Boolean captain;
 
 

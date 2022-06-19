@@ -1,9 +1,9 @@
 [ {
   "teamID" : "f2095f89-4a09-40b7-80b7-31915f629d93",
-  "teamname" : "teamone",
-  "gruendungsdatum" : "21.07.2019"
+  "teamname" : "team1",
+  "gruendungsdatum" : "19.07.2019"
 }, {
-  "teamID" : "bd0a3893-64bb-47b9-b37c-ca2f9f05dff8",
-  "teamname" : "team3",
-  "gruendungsdatum" : "29.04.2002"
+  "teamID" : "5b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+  "teamname" : "team2",
+  "gruendungsdatum" : "01.01.2001"
 } ]
