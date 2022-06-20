@@ -42,6 +42,7 @@ public class Sportarten {
     @FormParam("spieleranzahl")
     @Max(999)
     @Min(1)
+    @NotNull
     private Integer spieleranzahl;
 
 

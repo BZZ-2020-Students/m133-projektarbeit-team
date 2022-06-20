@@ -63,7 +63,7 @@ public class Spieler {
     private Integer spielernr;
 
     /**
-     * @FormParam("teamID")
+     * @FormParam("position")
      * @NotEmpty
      * @Size(min = 3, max = 50)
      */
@@ -73,7 +73,7 @@ public class Spieler {
     private String position;
 
     /**
-     * @FormParam("teamID")
+     * @FormParam("captain")
      * @NotNull
      */
     @FormParam("captain")

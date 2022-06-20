@@ -1,12 +1,25 @@
-[
-  {
-    "sportartID": "1",
-  "sportart": "Handball",
-  "spieleranzahl": "7 Feldspieler"
-  },
-  {
-    "sportartID": "2",
-    "sportart": "Fussball",
-    "spieleranzahl": "11 Feldspieler"
-  }
-]
+[ {
+  "sportartID" : "2345aB56-6I8l-47b9-er3t-cfasdfa89wwe",
+  "sportart" : "Basketball",
+  "spieleranzahl" : 5
+}, {
+  "sportartID" : "14055c19-56ba-4190-8d2d-d40584682bdc",
+  "sportart" : "Basketball",
+  "spieleranzahl" : 5
+}, {
+  "sportartID" : "7c7ea8ed-2f4a-4943-9a76-bd19bdf984cf",
+  "sportart" : "Volleyball",
+  "spieleranzahl" : 7
+}, {
+  "sportartID" : "7c7ea8ed-2f4a-4943-9a76-bd19bdf984cf",
+  "sportart" : "Volleyball",
+  "spieleranzahl" : 7
+}, {
+  "sportartID" : "7c7ea8ed-2f4a-4943-9a76-bd19bdf984cf",
+  "sportart" : "Volleyball",
+  "spieleranzahl" : 7
+}, {
+  "sportartID" : "7c7ea8ed-2f4a-4943-9a76-bd19bdf984cf",
+  "sportart" : "Volleyball",
+  "spieleranzahl" : 7
+} ]
