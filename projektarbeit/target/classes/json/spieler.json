@@ -7,11 +7,11 @@
   "position" : "Linkerflügel",
   "captain" : false
 }, {
-  "spielerID" : "bd1a3456-64bb-47b9-b37c-ca2f9f05dff8",
-  "name" : "Harper",
-  "vorname" : "Miles",
-  "geburtsdatum" : "30.10.2005",
-  "spielernr" : 89,
-  "position" : "Linkerflügel",
+  "spielerID" : "86b51fbf-7723-4a97-996b-a61efbf7e997",
+  "name" : "Bower",
+  "vorname" : "Jamie",
+  "geburtsdatum" : "19.12.2005",
+  "spielernr" : 15,
+  "position" : "Stürmer",
   "captain" : false
 } ]

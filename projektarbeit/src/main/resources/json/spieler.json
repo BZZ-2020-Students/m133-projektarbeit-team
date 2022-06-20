@@ -8,10 +8,10 @@
   "captain" : false
 }, {
   "spielerID" : "86b51fbf-7723-4a97-996b-a61efbf7e997",
-  "name" : "Beand",
-  "vorname" : "Liv",
-  "geburtsdatum" : "30.10.2004",
-  "spielernr" : 19,
-  "position" : "Rechterflügel",
-  "captain" : true
+  "name" : "Bower",
+  "vorname" : "Jamie",
+  "geburtsdatum" : "19.12.2005",
+  "spielernr" : 15,
+  "position" : "Stürmer",
+  "captain" : false
 } ]
