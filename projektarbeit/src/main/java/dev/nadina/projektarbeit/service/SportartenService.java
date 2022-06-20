@@ -56,6 +56,12 @@ public class SportartenService {
                 .build();
     }
 
+    /**
+     * @param sportartID
+     * @param sportart
+     * @param spieleranzahl
+     * @return Response
+     */
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -86,6 +92,10 @@ public class SportartenService {
                 .build();
     }
 
+    /**
+     * @param teamID
+     * @return Response
+     */
     @Path("delete")
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
@@ -104,6 +114,10 @@ public class SportartenService {
                 .build();
     }
 
+    /**
+     * @param sarex
+     * @return Response
+     */
     @Path("update")
     @POST
     @Produces(MediaType.TEXT_PLAIN)

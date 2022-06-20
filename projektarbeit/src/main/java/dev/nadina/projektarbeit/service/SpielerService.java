@@ -38,6 +38,10 @@ public class SpielerService {
                 .build();
     }
 
+    /**
+     * @param spielerID
+     * @return Response
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -59,6 +63,16 @@ public class SpielerService {
                 .build();
     }
 
+    /**
+     * @param spielerID
+     * @param name
+     * @param vorname
+     * @param geburtsdatum
+     * @param position
+     * @param spielernr
+     * @param captain
+     * @return Response
+     */
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -106,6 +120,10 @@ public class SpielerService {
                 .build();
     }
 
+    /**
+     * @param spielerID
+     * @return Response
+     */
     @Path("delete")
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
@@ -124,6 +142,10 @@ public class SpielerService {
                 .build();
     }
 
+    /**
+     * @param s
+     * @return Response
+     */
     @Path("update")
     @POST
     @Produces(MediaType.TEXT_PLAIN)

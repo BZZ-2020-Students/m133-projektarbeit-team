@@ -40,6 +40,10 @@ public class TeamService {
                 .build();
     }
 
+    /**
+     * @param teamID
+     * @return Response
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -61,6 +65,12 @@ public class TeamService {
                 .build();
     }
 
+    /**
+     * @param teamID
+     * @param teamname
+     * @param gruendungsdatum
+     * @return Response
+     */
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -90,6 +100,10 @@ public class TeamService {
                 .build();
     }
 
+    /**
+     * @param teamID
+     * @return Response
+     */
     @Path("delete")
     @DELETE
     @Produces(MediaType.TEXT_PLAIN)
@@ -108,6 +122,10 @@ public class TeamService {
                 .build();
     }
 
+    /**
+     * @param t
+     * @return Response
+     */
     @Path("update")
     @POST
     @Produces(MediaType.TEXT_PLAIN)

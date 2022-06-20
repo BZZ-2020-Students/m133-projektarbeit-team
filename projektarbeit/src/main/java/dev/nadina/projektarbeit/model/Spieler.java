@@ -14,34 +14,68 @@ public class Spieler {
     /**
      * Attribute
      */
+
+    /**
+     * @FormParam("spielerID")
+     * @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
+     */
     @FormParam("spielerID")
     @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
     private String spielerID;
 
+    /**
+     * @FormParam("spielername")
+     * @NotEmpty
+     * @Size(min = 3, max = 40)
+     */
     @FormParam("name")
     @NotEmpty
     @Size(min = 3, max = 40)
     private String name;
 
+    /**
+     * @FormParam("vorname")
+     * @NotEmpty
+     * @Size(min = 3, max = 40)
+     */
     @FormParam("vorname")
     @NotEmpty
     @Size(min = 3, max = 40)
     private String vorname;
 
-    @FormParam("geburtstag")
+    /**
+     * @FormParam("geburtstag")
+     * @NotEmpty
+     */
+    @FormParam("geburtsdatum")
     @NotEmpty
     private String geburtsdatum;
 
+    /**
+     * @FormParam("spielernr")
+     * @NotEmpty
+     * @Max(999)
+     * @Min(1)
+     */
     @FormParam("spielernr")
     @Max(999)
-    @Min(0)
+    @Min(1)
     private Integer spielernr;
 
+    /**
+     * @FormParam("teamID")
+     * @NotEmpty
+     * @Size(min = 3, max = 50)
+     */
     @FormParam("position")
     @NotEmpty
     @Size(min = 3, max = 50)
     private String position;
 
+    /**
+     * @FormParam("teamID")
+     * @NotNull
+     */
     @FormParam("captain")
     @NotNull
     private Boolean captain;

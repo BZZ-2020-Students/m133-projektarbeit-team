@@ -15,15 +15,30 @@ public class Sportarten {
     /**
      * Attribute
      */
+
+    /**
+     * @FormParam("sportartID")
+     * @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
+     */
     @FormParam("sportartID")
     @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
     private String sportartID;
 
+    /**
+     * @FormParam("sportart")
+     * @NotEmpty
+     * @Size(min = 3, max = 40)
+     */
     @FormParam("sportart")
     @NotEmpty
     @Size(min = 3, max = 40)
     private String sportart;
 
+    /**
+     * @FormParam("beschreibung")
+     * @Max(999)
+     * @Min(1)
+     */
     @FormParam("spieleranzahl")
     @Max(999)
     @Min(1)
