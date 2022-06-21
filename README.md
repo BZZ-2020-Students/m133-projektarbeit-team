@@ -15,3 +15,11 @@ JSON Dateien
 - Spieler
 - Sportarten
 - User
+
+## Milestone 2
+- In Model Klassen jeweils Validierung hinzugefügt.
+- Update, Delete, Insert in jeder ServiceKlasse.
+- In DataHandler Methoden zu Update, Delete, Insert
+
+## Milestone 3
+...
