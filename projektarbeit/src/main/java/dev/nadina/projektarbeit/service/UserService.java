@@ -1,7 +1,7 @@
 package dev.nadina.projektarbeit.service;
 
-
 import dev.nadina.projektarbeit.data.DataHandler;
+import dev.nadina.projektarbeit.data.UserData;
 import dev.nadina.projektarbeit.model.Team;
 import dev.nadina.projektarbeit.model.User;
 import jakarta.ws.rs.*;
@@ -17,22 +17,46 @@ import java.util.List;
  * @version 2.0
  * @since   2022-05-20
  */
+
 @Path("user")
 public class UserService {
-    @Path("list")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    /**
-     * @return Response
-     * @param teamUUID
-     */
-    public Response listUser(){
-        List<User> UserList = DataHandler.readAllUser();
-        return Response
-                .status(200)
-                .entity(UserList)
+    @Path("login")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+
+    public Response login(
+            @FormParam("userName") String userName,
+            @FormParam("password") String password) {
+
+        int httpStatus;
+
+        User user = UserData.findUser(userName, password);
+
+        if(user == null || user.getUserRole() == null || user.getUserRole().equals("gast")) {
+            httpStatus = 404;
+        } else {
+            httpStatus = 200;
+        }
+        Response response = Response
+                .status(httpStatus)
+                .entity("")
                 .build();
+
+        return response;
     }
 
+
+    @Path("logout")
+    @DELETE
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response logoff() {
+
+        Response response = Response
+                .status(200)
+                .entity("")
+                .build();
+
+        return response;
+    }
 
 }

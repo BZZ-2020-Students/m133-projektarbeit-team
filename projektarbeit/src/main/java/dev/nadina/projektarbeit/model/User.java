@@ -15,6 +15,12 @@ public class User {
     private String password;
     private String userRole;
 
+
+    public User() {
+        setUserRole("gast");
+    }
+
+
     /**
      * gets userUUID
      * @return value of userUUID
