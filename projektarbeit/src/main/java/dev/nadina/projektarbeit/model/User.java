@@ -1,5 +1,7 @@
 package dev.nadina.projektarbeit.model;
 
+import java.util.List;
+
 /**
  * Daten und Methoden für den User
  *
@@ -17,7 +19,7 @@ public class User {
 
 
     public User() {
-        setUserRole("gast");
+        setUserRole("guest");
     }
 
 
@@ -84,4 +86,5 @@ public class User {
     public void setUserRole(String userRole) {
         this.userRole = userRole;
     }
+
 }

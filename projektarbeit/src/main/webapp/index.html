@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <script src="js/login.js"></script>
+    <meta name="author" content="Marcel Suter"/>
+    <meta name="copyright" content="FG ICT - Bildungszentrum Zürichsee"/>
+    <meta name="project" content="Bookshelf"/>
+    <meta name="description" content="bookshelf books list table"/>
+    <title>Anmeldung</title>
+<!--    <link rel="stylesheet" href="css/bookshelf.css">-->
+    <script src="./js/util.js"></script>
+    <script src="./js/login.js"></script>
 </head>
 <body>
-        <div class="container">
-           <div class="login-page">
-               <div class="form" >
-                   <h2>― Login ―</h2>
-                   <div id="message" style="color: red"></div>
-                   <form id="loginform" name="loginform">
-                       <input type="text" id="userName" placeholder="username">
-                       <input type="password" id="password" placeholder="password">
-                       <button id="login" type="submit">login</button>
-                   </form>
-               </div>
-            </div>
-        </div>
+<nav id="nav"></nav>
+<h3>Anmeldung</h3>
+<form id="loginForm">
+    <table>
+        <tr>
+            <td><label for="username">Benutzername</label></td>
+            <td><input id="username" name="username" type="text"/>
+        </tr>
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input id="password" name="password" type="password"/>
+        </tr>
+        <tr>
+            <td>
+                <button id="login" type="submit">Anmelden</button>
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
-
