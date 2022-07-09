@@ -101,7 +101,7 @@ function showNav(userRole) {
     const navbar = document.getElementById("nav");
     let text = "<ul>";
     if (!userRole || userRole === "guest") {
-        text += "<li><a href='./index.html'>Anmelden</a></li>";
+        text += "<a href='./index.html'></a>";
     } else {
         text += "<li><a href='./bookshelf.html'>Bücher</a></li>" +
             "<li><a href='./publisherlist.html'>Verlage</a></li>" +
@@ -109,7 +109,6 @@ function showNav(userRole) {
             "<li><a href='./index.html'>Abmelden</a></li>";
 
     }
-    text += "<li id='message' style='color: red;'></li>" +
-        "</ul>";
+    text += "<div id='message' style='color: red;'></div>";
     navbar.innerHTML = text;
 }
