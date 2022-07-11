@@ -36,7 +36,7 @@ function getSort(){
     let sortField = readStorage("sortField");
     let sortOrder = readStorage("sortOrder");
     if (!sortField || sortField.length === 0) {
-        sortField = "teamName";
+        sortField = "teamname";
         sortOrder = "ASC";
     }
     return [sortField, sortOrder];
@@ -73,7 +73,7 @@ function readTeam() {
             if (response.ok){
                 return response;
             } else if (response.status === 401) {
-                window.location.href = "./login.html";
+                window.location.href = "./";
             } else {
                 console.log(response);
             }
@@ -104,7 +104,7 @@ function showTeamList(data){
         button.addEventListener("click", editTeam);
         row.insertCell(-1).appendChild(button);
 
-        row.insertCell(-1).innerHTML = team.teamName;
+        row.insertCell(-1).innerHTML = team.teamname;
         row.insertCell(-1).innerHTML = team.gruendungsdatum;
         row.insertCell(-1).innerHTML = team.teamID;
 
@@ -138,7 +138,7 @@ function deleteTeam(){
     const button = event.target;
     const teamID = button.getAttribute("data-teamID");
 
-    fetch("./resource/team/delete/" + teamID, {
+    fetch("./resource/team/delete?id=" + teamID, {
         method: "DELETE",
         headers: {"Authorization": "Bearer " + readStorage("token")}
     })

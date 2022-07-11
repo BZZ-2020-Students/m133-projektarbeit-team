@@ -1,7 +1,6 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Team;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
@@ -12,10 +11,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
-
-import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * ServiceKlasse für die Team
@@ -138,11 +134,16 @@ public class TeamService {
     public Response deleteTeam(
             @NotEmpty
             @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
-            @QueryParam("id") String teamID
+            @QueryParam("id") String teamID,
+            @CookieParam("userRole") String userRole
     ){
         int httpStatus = 200;
-        if (DataHandler.deleteTeam(teamID)) {
+        if(userRole.equals("admin")){
+            if (DataHandler.deleteTeam(teamID)) {
             httpStatus = 410;
+            }
+        }else{
+            httpStatus = 403;
         }
         return Response
                 .status(httpStatus)
@@ -158,17 +159,22 @@ public class TeamService {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTeam(
-            @Valid @BeanParam Team t
+            @Valid @BeanParam Team t,
+            @CookieParam("userRole") String userRole
     ){
-        Team team = DataHandler.readTeamByID(t.getTeamID());
-        team.setTeamID(t.getTeamID());
-        team.setTeamname(t.getTeamname());
-        team.setGruendungsdatum(t.getGruendungsdatum());
-
-        DataHandler.updateTeam();
-
-
         int httpStatus = 200;
+
+        Team team = DataHandler.readTeamByID(t.getTeamID());
+        if(team != null) {
+            team.setTeamID(t.getTeamID());
+            team.setTeamname(t.getTeamname());
+            team.setGruendungsdatum(t.getGruendungsdatum());
+
+            DataHandler.updateTeam();
+        }else{
+            httpStatus = 410;
+        }
+
         return Response
                 .status(httpStatus)
                 .entity("Team erfolgreich aktualisiert!")
