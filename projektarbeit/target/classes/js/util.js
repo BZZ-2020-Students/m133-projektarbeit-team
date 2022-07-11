@@ -103,11 +103,10 @@ function showNav(userRole) {
     if (!userRole || userRole === "guest") {
         text += "<a href='./index.html'></a>";
     } else {
-        text += "<li><a href='./bookshelf.html'>Bücher</a></li>" +
-            "<li><a href='./publisherlist.html'>Verlage</a></li>" +
-            "<li><a href='./authorlist.html'>Autoren</a></li>" +
-            "<li><a href='./index.html'>Abmelden</a></li>";
-
+        text += "<li><a href='./index.html'>Abmelden</a></li>" +
+            "<li><a href='./spieler.html'>Spieler</a></li>" +
+            "<li><a href='./team.html'>Team</a></li>" +
+            "<li><a href='./sportart.html'>Sportarten</a></li>";
     }
     text += "<div id='message' style='color: red;'></div>";
     navbar.innerHTML = text;

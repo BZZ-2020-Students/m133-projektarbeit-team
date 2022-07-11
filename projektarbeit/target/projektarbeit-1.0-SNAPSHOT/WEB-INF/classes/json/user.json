@@ -2,10 +2,12 @@
   "userUUID" : "001",
   "userName" : "user1",
   "password" : "user1pw",
-  "userRole" : "Admin"
+  "userRole" : "admin",
+  "words" : ["word1", "word2", "word3"]
 }, {
   "userUUID" : "002",
   "userName" : "user2",
   "password" : "user2pw",
-  "userRole" : "admin"
+  "userRole" : "admin",
+  "words" : ["word1", "word2", "word3"]
 }]

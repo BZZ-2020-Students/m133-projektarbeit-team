@@ -15,7 +15,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Schreibt und liest die Daten in die JSON-Files
@@ -101,8 +104,8 @@ public class DataHandler {
     }
 
     /*================================================================= Team =================================================================
-     * insertTeam
-     * deleteTeam
+     * insertTeam           getTeamList
+     * deleteTeam           setTeamList
      * updateTeam
      * readAllTeam
      * readTeamByID
@@ -160,6 +163,86 @@ public class DataHandler {
         }
         return team;
     }
+
+    public static List<Team> readSortedTeams(
+            String sortField,
+            String sortOrder,
+            String filterField,
+            String filter
+    ) {
+        final Comparator<Team> compareTeams = new Comparator<Team>() {
+            @Override
+            public int compare(Team team1, Team team2) {
+                int result = 0;
+                if (sortField.equals("teamname")) {
+                    result = team1.getTeamname().compareTo(team2.getTeamname());
+                } else if (sortField.equals("gruendungsdatum")) {
+                    result = team1.getGruendungsdatum().compareTo(team2.getGruendungsdatum());
+                } else if (sortField.equals("teamID")) {
+                    result = team1.getTeamID().compareTo(team2.getTeamID());
+                }
+                if (sortOrder.equals("DESC")) {
+                    result *= -1;
+                }
+                return result;
+            }
+
+        };
+
+        List<Team> teams;
+        if (filter == null || filter.equals("")) {
+            teams = getTeamList();
+        } else {
+            teams = readFilteredTeams(filterField, filter);
+        }
+        teams.sort(compareTeams);
+        return teams;
+    }
+
+    public static List<Team> readFilteredTeams(
+            String fieldname,
+            String filter)
+    {
+        Predicate<Team> predicate = null;
+        if(fieldname.equals("teamnameFilter")){
+            predicate = team -> team.getTeamname().toLowerCase().contains(filter.toLowerCase());
+        } else if(fieldname.equals("gruendungsdatumFilter")){
+            predicate = team -> team.getGruendungsdatum().toLowerCase().contains(filter.toLowerCase());
+        } else if(fieldname.equals("teamIDFilter")){
+            predicate = team -> team.getTeamID().toLowerCase().contains(filter.toLowerCase());
+        }
+        List<Team> filteredList =
+                DataHandler.getTeamList().
+                stream().
+                filter(predicate).
+                collect(Collectors.toList());
+        return filteredList;
+    }
+
+
+
+    /**
+     * gets TeamList
+     * @return value of TeamList
+     */
+    private static List<Team> getTeamList() {
+
+        if (DataHandler.TeamList == null) {
+            DataHandler.setTeamList(new ArrayList<>());
+            readTeamJSON();
+        }
+        return TeamList;
+    }
+
+    /**
+     * writes the Spielers to the JSON-file
+     * @param TeamList the value of TeamList
+     */
+    private static void setTeamList(List<Team> TeamList) {
+        DataHandler.TeamList = TeamList;
+    }
+
+
 
     /*================================================================= Sportarten =================================================================
      * insertSportarten
@@ -440,26 +523,7 @@ public class DataHandler {
         }
     }
 
-    /**
-     * gets TeamList
-     * @return value of TeamList
-     */
-    private static List<Team> getTeamList() {
 
-        if (DataHandler.TeamList == null) {
-            DataHandler.setTeamList(new ArrayList<>());
-            readTeamJSON();
-        }
-        return TeamList;
-    }
-
-    /**
-     * writes the Spielers to the JSON-file
-     * @param TeamList the value of TeamList
-     */
-    private static void setTeamList(List<Team> TeamList) {
-        DataHandler.TeamList = TeamList;
-    }
 
     /**
      * sets SpielerList

@@ -47,9 +47,9 @@ public class UserService {
         } else {
             randomWord = (int) (Math.random() * 5);
             claimMap.put("role", user.getUserRole());
-//            claimMap.put("word", user.getWords().get(randomWord));
+           // claimMap.put("word", user.getWords().get(randomWord));
         }
-//        token = JWToken.buildToken(user.getUserRole(), 5, claimMap);
+       // token = JWToken.buildToken(user.getUserRole(), 5, claimMap);
 
 
         NewCookie roleCookie = new NewCookie(
@@ -78,6 +78,18 @@ public class UserService {
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
                 .cookie(roleCookie)
                 .cookie(wordCookie)
+                .build();
+    }
+
+    @PermitAll
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response checkWords(
+
+    ){
+        return Response
+                .status(200)
+                .entity("")
                 .build();
     }
 }

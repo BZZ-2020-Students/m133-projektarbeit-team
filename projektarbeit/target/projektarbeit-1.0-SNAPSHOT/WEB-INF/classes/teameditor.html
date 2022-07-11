@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <title>Team Editor</title>
+</head>
+<body>
+<h2>Team Editor</h2>
+<form id="teamEditForm" name="teamedit">
+    <table>
+        <tr>
+            <td><label for="teamName">Teamname</label></td>
+            <td>
+                <input id="teamName" name="teamName" type="text" size="30" minlength="2" maxlength="30" required/>
+                <input id="teamID" name="teamID" type="hidden"/>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="gruendungsdatum">Gruendungsdatum</label></td>
+            <td><input id="gruendungsdatum" name="gruendungsdatum"/></td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <button id="save" type="submit">Speichern</button>
+            </td>
+            <td>
+                <button id="reset" type="reset">Zurücksetzen</button>
+            </td>
+            <td>
+                <button id="cancel" type="button">Abbruch</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

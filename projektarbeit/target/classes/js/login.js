@@ -38,5 +38,5 @@ function loginUser(event) {
  */
 function loginSuccess(response) {
     saveToken(response.headers);
-    window.location.href = "./2fa.html";
+    window.location.href = "./team.html";
 }

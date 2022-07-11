@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TeamUebersicht</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="./js/util.js"></script>
+    <script src="./js/team.js"></script>
+
+</head>
+<body>
+<nav id="nav"></nav>
+<h2>Teamliste</h2>
+    <form id="teamForm">
+        <table id="team">
+            <thead>
+            <tr id="headings">
+                <th></th>
+            </tr>
+            <tr id="search">
+                <th>&#128270;</th>
+                <th><input id="teamnameFilter" type="text" placeholder="teamname"/></th>
+                <th><input id="gruendungsdatumFilter" type="text" placeholder="Gruendungsdatum"/></th>
+                <th><input id="teamIDFilter" type="text" placeholder="TeamID"/></th>
+            </tr>
+            </thead>
+            <tbody id="ListTeam">
+
+            </tbody>
+        </table>
+        <p id="addButton">
+        </p>
+    </form>
+</body>
+</html>

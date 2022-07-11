@@ -3,12 +3,14 @@ package dev.nadina.projektarbeit.service;
 import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Team;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.NewCookie;
 import jakarta.ws.rs.core.Response;
 
 import java.math.BigDecimal;
@@ -25,6 +27,7 @@ import java.util.UUID;
 
 @Path ("team")
 public class TeamService {
+    @RolesAllowed({"admin", "user"})
     @Path("list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -32,11 +35,34 @@ public class TeamService {
      * @return Response
      * @param String teamID
      */
-    public Response listTeam(){
+    public Response listTeam(
+            @CookieParam("userRole") String userRole,
+            @Pattern(regexp = "^teamname|gruendungsdatum|teamID")
+            @QueryParam("sortField") String sortField,
+            @QueryParam("filterField") String filterField,
+            @QueryParam("filter") String filter,
+            @QueryParam("sort") String sortOrde
+    ){
         List<Team> TeamList = DataHandler.readAllTeams();
+        if(sortField != null && sortOrde != null){
+            TeamList = DataHandler.readSortedTeams(sortField,sortOrde,filterField, filter);
+        }else if(sortField != null && filter != null){
+            TeamList = DataHandler.readFilteredTeams(filterField, filter);
+        }
+
+        NewCookie cookie = new NewCookie(
+                "userRole",
+                userRole,
+                "/",
+                "",
+                "Login-Cookie",
+                600,
+                false
+        );
         return Response
                 .status(200)
                 .entity(TeamList)
+                .cookie(cookie)
                 .build();
     }
 
@@ -44,6 +70,7 @@ public class TeamService {
      * @param teamID
      * @return Response
      */
+    @RolesAllowed({"admin", "user"})
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -53,6 +80,7 @@ public class TeamService {
      */
     public Response readSpieler(
             @QueryParam("id") String teamID
+
     ){
         int httpStatus = 200;
         Team team = DataHandler.readTeamByID(teamID);

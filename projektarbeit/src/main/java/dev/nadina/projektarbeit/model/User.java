@@ -16,6 +16,7 @@ public class User {
     private String userName;
     private String password;
     private String userRole;
+    private List<String> words;
 
 
     public User() {
@@ -87,4 +88,11 @@ public class User {
         this.userRole = userRole;
     }
 
+    public List<String> getWords() {
+        return words;
+    }
+
+    public void setWords(List<String> words) {
+        this.words = words;
+    }
 }
