@@ -1,9 +1,7 @@
 /**
  * view-controller for 2fa-form
  */
-const userRole = getCookie("userRole");
 document.addEventListener("DOMContentLoaded", () => {
-    //showNav(userRole);
     showSecret();
     document.getElementById("2faForm").addEventListener("submit", twoFAUser);
 });
