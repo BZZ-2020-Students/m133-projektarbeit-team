@@ -1,0 +1,1725 @@
+{
+	"id": "a35aa153-837f-437f-950a-c3b634d682d4",
+	"name": "Project(Team/Sport)",
+	"timestamp": "2022-07-11T19:16:12.244Z",
+	"collection_id": "20898199-2ce7c9ee-387f-42b6-8092-6f97d1fd3b91",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 44,
+	"totalFail": 1,
+	"results": [
+		{
+			"id": "efa435b2-1e9e-41ad-a0cd-fcb5217f46c6",
+			"name": "Insert Sporarten",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 10,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "efe3bb03-ea85-42dd-9f73-b9b7257c39ec",
+			"name": "Delete Sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delete?id=2",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4f26cab8-6bd3-432e-baf7-a9e1e2057b55",
+			"name": "Update Sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3c344c93-b021-4c9c-8e07-4a4dcf2a9397",
+			"name": "Rex Insert Sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0b602979-cfaa-47d4-b35f-4a2b765ef5e0",
+			"name": "Rex Delete Sporart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delete?id=73bd4187-a5b7-4864-be79-327bb8ed43bf",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0d81eda1-eaff-4467-ab70-986cfcba13d3",
+			"name": "Rex Update Sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				8
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "56a86cd1-2ecd-453c-bc5a-8e103a14ac7a",
+			"name": "Insert Sporart successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "21740eeb-6096-49c2-b505-109e758d7ec5",
+			"name": "fail (wrong ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "c3b85f13-63b3-4a8c-9e3c-fc75989932ce",
+			"name": "wrong format - sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "2deff8bf-ca68-4a3f-b840-af37a5d8b61a",
+			"name": "null value - sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "596ae18e-5e63-43df-af84-dd1ff3158f60",
+			"name": "wrong format - sportart (too short)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "2732b6d9-c384-4fc6-ad08-384fe8008007",
+			"name": "wrong format - sportart (too long)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "1846360a-cb4f-4641-b610-71bc5794d0d1",
+			"name": "wrong format - spieleranzahl",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "15d95e70-5f71-4c47-a435-1cce7c0c78fa",
+			"name": "null value - spieleranzahl",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "e4dd5cec-b7d7-44d0-ba7c-1bee3fb0e02a",
+			"name": "wrong format - spieleranzahl (number too small)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "e7066465-1bfe-4871-9a32-757e98761c63",
+			"name": "wrong format - spieleranzahl (number too big)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "40fb377f-4fae-4e06-9996-17cb7b9ee970",
+			"name": "fail (404)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/creat",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "d436cc07-b0c7-4e23-870b-ee538144eb88",
+			"name": "Delete Sportart successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delete?id=7c7ea8ed-2f4a-4943-9a76-bd19bdf984cf",
+			"time": 7,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "42ccb52b-1121-4210-8255-9adea0d44002",
+			"name": "Delete Sportart (wrong ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delete?id=12",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "48d700bf-d7f6-4e7f-9b51-7401b763634e",
+			"name": "Delete Sportart (null ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delete?id=",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "4ee6dad3-f736-44c3-98c3-2eb0d41d49b7",
+			"name": "Delete Sportart (404)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/delee?idd=12",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "9bf7bec1-b654-420d-9ac3-db2538fb8b7f",
+			"name": "Update Sportart successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "b73e5da6-a4af-4297-a0ff-ba21fd2300f6",
+			"name": "fail (unvalid ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/insert",
+			"time": 4,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "79365551-cbfe-4a60-a520-a1f106896203",
+			"name": "wrong format - sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "55d2fcc3-3af1-4429-98c2-5bf8a4ec6e92",
+			"name": "null value - sportart",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "ca3986ad-c364-4649-8bed-7b6f6af12fbd",
+			"name": "wrong format - sportart (too short)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "941893f7-fd25-442a-a3e3-a581ed871def",
+			"name": "wrong format - sportart (too long)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "81bf16d5-533e-477c-9643-20dcdb2f8928",
+			"name": "wrong format - spieleranzahl",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "56600cf8-6734-418c-bfee-e5268bed8c8c",
+			"name": "null value - spieleranzahl",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "15e05763-0f64-459f-93fc-bce1b669859c",
+			"name": "wrong format - spieleranzahl (number too small)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "de119b94-8021-48e7-9049-128d4362abdb",
+			"name": "wrong format - spieleranzahl (number too big)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "0612200b-d6f3-4b6b-99be-7351e02386bb",
+			"name": "Request sportarten - id",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/read?id=1",
+			"time": 8,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test": false
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test": false
+				}
+			]
+		},
+		{
+			"id": "41a5b408-e13d-4869-b33e-cddac0a9b8d0",
+			"name": "Error 410",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/sportarten/read?id=4",
+			"time": 4,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"410 Error": true
+			},
+			"testPassFailCounts": {
+				"410 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"410 Error": true
+				}
+			]
+		},
+		{
+			"id": "b1a3a4b0-1bec-4708-b80d-9721df0af63d",
+			"name": "Insert Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/create",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f7ff7c52-bdfe-4cc9-9058-d020b275ecef",
+			"name": "Delete Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delete?id=f2095f89-4a09-40b7-80b7-31915f629d93",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3a465483-bc53-462d-8cac-0f45d1394ba5",
+			"name": "Update Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "074fd81c-c8c0-4e16-9836-1a3f04b5471c",
+			"name": "Rex Delete Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delete?id=5b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d02a1cd6-8e44-4d1c-bf10-2f6238a54072",
+			"name": "Rex Update Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "dc37754a-2a99-4da0-9f14-4b046820c6ef",
+			"name": "Rex Insert Team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/create",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "49e075ae-1e14-4aa8-9d6e-cbd5c121ae78",
+			"name": "Insert Team successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/create",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "ee980887-d95e-4756-9362-13fae894cc33",
+			"name": "fail (wrong ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "33b3ee00-a3dd-4859-aae9-8927c0308159",
+			"name": "null value - teamname",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/insert",
+			"time": 5,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "fdb5eec1-a4b0-4101-a3bc-61783407dd0e",
+			"name": "wrong format - teamname (too short)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/insert",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "c5d8c991-1e81-4999-9ff6-d43bbf098ecd",
+			"name": "wrong format - teamname (too long)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/insert",
+			"time": 6,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "3d7c183e-3d3b-4c2f-8b43-a226492ab618",
+			"name": "null value - gruendungsdatum",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/insert",
+			"time": 12,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "15f0b4b6-4309-49b6-9c97-8c6f5a23fcec",
+			"name": "Rex Delete Team successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delete?id=9b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+			"time": 4,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				4
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8479a48e-6461-4554-9b8b-9f4917af2731",
+			"name": "Rex Delete Team (wrong ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delete?id=1",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "999c7c4f-1232-42d8-bd11-978da72b7c30",
+			"name": "Rex Delete Team (null ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delete?id=",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "2ae16225-80ee-49c5-84eb-665b26944a22",
+			"name": "Rex Delete Team (404)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/delee?id=1",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"404 Error": true
+			},
+			"testPassFailCounts": {
+				"404 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"404 Error": true
+				}
+			]
+		},
+		{
+			"id": "e6c107a3-9acf-40ef-8c5b-70cfb5a84f94",
+			"name": "Rex Update Team successful",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "15dc2e9a-8cb2-4428-9adb-3f773793761e",
+			"name": "fail (invalid ID)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "360e315e-b2ff-407b-88d9-6eb11ed5932a",
+			"name": "null value - teamname",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "a400cc16-8a04-4e81-908b-86b2932a3cfd",
+			"name": "wrong format - teamname (too short)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "ee0b7b78-4e8a-4a79-ad94-e2127a6f9618",
+			"name": "wrong format - teamname (too long)",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "1397b22a-a78b-4030-801f-aefa91023dc9",
+			"name": "null value - gruendungsdatum",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"400 Error": true
+			},
+			"testPassFailCounts": {
+				"400 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"400 Error": true
+				}
+			]
+		},
+		{
+			"id": "f56a1aff-df7c-4611-bdf4-26ba9eaf281d",
+			"name": "Request team",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/list",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "7ef29ce2-1f90-49c3-a7e7-9d9d86013a1c",
+			"name": "Request team - id",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/read?id=1",
+			"time": 4,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test": true
+				}
+			]
+		},
+		{
+			"id": "1b9649ab-5e41-4909-ab38-a69cb2cdfa30",
+			"name": "Error 410",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/team/read?id=4",
+			"time": 4,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"410 Error": true
+			},
+			"testPassFailCounts": {
+				"410 Error": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"410 Error": true
+				}
+			]
+		},
+		{
+			"id": "d3f30a05-dc4f-4a06-8df0-8820dea474e8",
+			"name": "Insert Spieler",
+			"url": "http://localhost:8080/projektarbeit-1.0-SNAPSHOT/resource/spieler/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				6
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 390,
+	"collection": {
+		"requests": [
+			{
+				"id": "efa435b2-1e9e-41ad-a0cd-fcb5217f46c6",
+				"method": "POST"
+			},
+			{
+				"id": "efe3bb03-ea85-42dd-9f73-b9b7257c39ec",
+				"method": "DELETE"
+			},
+			{
+				"id": "4f26cab8-6bd3-432e-baf7-a9e1e2057b55",
+				"method": "POST"
+			},
+			{
+				"id": "3c344c93-b021-4c9c-8e07-4a4dcf2a9397",
+				"method": "POST"
+			},
+			{
+				"id": "0b602979-cfaa-47d4-b35f-4a2b765ef5e0",
+				"method": "DELETE"
+			},
+			{
+				"id": "0d81eda1-eaff-4467-ab70-986cfcba13d3",
+				"method": "POST"
+			},
+			{
+				"id": "56a86cd1-2ecd-453c-bc5a-8e103a14ac7a",
+				"method": "POST"
+			},
+			{
+				"id": "21740eeb-6096-49c2-b505-109e758d7ec5",
+				"method": "POST"
+			},
+			{
+				"id": "c3b85f13-63b3-4a8c-9e3c-fc75989932ce",
+				"method": "POST"
+			},
+			{
+				"id": "2deff8bf-ca68-4a3f-b840-af37a5d8b61a",
+				"method": "POST"
+			},
+			{
+				"id": "596ae18e-5e63-43df-af84-dd1ff3158f60",
+				"method": "POST"
+			},
+			{
+				"id": "2732b6d9-c384-4fc6-ad08-384fe8008007",
+				"method": "POST"
+			},
+			{
+				"id": "1846360a-cb4f-4641-b610-71bc5794d0d1",
+				"method": "POST"
+			},
+			{
+				"id": "15d95e70-5f71-4c47-a435-1cce7c0c78fa",
+				"method": "POST"
+			},
+			{
+				"id": "e4dd5cec-b7d7-44d0-ba7c-1bee3fb0e02a",
+				"method": "POST"
+			},
+			{
+				"id": "e7066465-1bfe-4871-9a32-757e98761c63",
+				"method": "POST"
+			},
+			{
+				"id": "40fb377f-4fae-4e06-9996-17cb7b9ee970",
+				"method": "POST"
+			},
+			{
+				"id": "d436cc07-b0c7-4e23-870b-ee538144eb88",
+				"method": "DELETE"
+			},
+			{
+				"id": "42ccb52b-1121-4210-8255-9adea0d44002",
+				"method": "DELETE"
+			},
+			{
+				"id": "48d700bf-d7f6-4e7f-9b51-7401b763634e",
+				"method": "DELETE"
+			},
+			{
+				"id": "4ee6dad3-f736-44c3-98c3-2eb0d41d49b7",
+				"method": "DELETE"
+			},
+			{
+				"id": "9bf7bec1-b654-420d-9ac3-db2538fb8b7f",
+				"method": "POST"
+			},
+			{
+				"id": "b73e5da6-a4af-4297-a0ff-ba21fd2300f6",
+				"method": "POST"
+			},
+			{
+				"id": "79365551-cbfe-4a60-a520-a1f106896203",
+				"method": "POST"
+			},
+			{
+				"id": "55d2fcc3-3af1-4429-98c2-5bf8a4ec6e92",
+				"method": "POST"
+			},
+			{
+				"id": "ca3986ad-c364-4649-8bed-7b6f6af12fbd",
+				"method": "POST"
+			},
+			{
+				"id": "941893f7-fd25-442a-a3e3-a581ed871def",
+				"method": "POST"
+			},
+			{
+				"id": "81bf16d5-533e-477c-9643-20dcdb2f8928",
+				"method": "POST"
+			},
+			{
+				"id": "56600cf8-6734-418c-bfee-e5268bed8c8c",
+				"method": "POST"
+			},
+			{
+				"id": "15e05763-0f64-459f-93fc-bce1b669859c",
+				"method": "POST"
+			},
+			{
+				"id": "de119b94-8021-48e7-9049-128d4362abdb",
+				"method": "POST"
+			},
+			{
+				"id": "0612200b-d6f3-4b6b-99be-7351e02386bb",
+				"method": "GET"
+			},
+			{
+				"id": "41a5b408-e13d-4869-b33e-cddac0a9b8d0",
+				"method": "GET"
+			},
+			{
+				"id": "b1a3a4b0-1bec-4708-b80d-9721df0af63d",
+				"method": "POST"
+			},
+			{
+				"id": "f7ff7c52-bdfe-4cc9-9058-d020b275ecef",
+				"method": "DELETE"
+			},
+			{
+				"id": "3a465483-bc53-462d-8cac-0f45d1394ba5",
+				"method": "POST"
+			},
+			{
+				"id": "074fd81c-c8c0-4e16-9836-1a3f04b5471c",
+				"method": "DELETE"
+			},
+			{
+				"id": "d02a1cd6-8e44-4d1c-bf10-2f6238a54072",
+				"method": "POST"
+			},
+			{
+				"id": "dc37754a-2a99-4da0-9f14-4b046820c6ef",
+				"method": "POST"
+			},
+			{
+				"id": "49e075ae-1e14-4aa8-9d6e-cbd5c121ae78",
+				"method": "POST"
+			},
+			{
+				"id": "ee980887-d95e-4756-9362-13fae894cc33",
+				"method": "POST"
+			},
+			{
+				"id": "33b3ee00-a3dd-4859-aae9-8927c0308159",
+				"method": "POST"
+			},
+			{
+				"id": "fdb5eec1-a4b0-4101-a3bc-61783407dd0e",
+				"method": "POST"
+			},
+			{
+				"id": "c5d8c991-1e81-4999-9ff6-d43bbf098ecd",
+				"method": "POST"
+			},
+			{
+				"id": "3d7c183e-3d3b-4c2f-8b43-a226492ab618",
+				"method": "POST"
+			},
+			{
+				"id": "15f0b4b6-4309-49b6-9c97-8c6f5a23fcec",
+				"method": "DELETE"
+			},
+			{
+				"id": "8479a48e-6461-4554-9b8b-9f4917af2731",
+				"method": "DELETE"
+			},
+			{
+				"id": "999c7c4f-1232-42d8-bd11-978da72b7c30",
+				"method": "DELETE"
+			},
+			{
+				"id": "2ae16225-80ee-49c5-84eb-665b26944a22",
+				"method": "DELETE"
+			},
+			{
+				"id": "e6c107a3-9acf-40ef-8c5b-70cfb5a84f94",
+				"method": "POST"
+			},
+			{
+				"id": "15dc2e9a-8cb2-4428-9adb-3f773793761e",
+				"method": "POST"
+			},
+			{
+				"id": "360e315e-b2ff-407b-88d9-6eb11ed5932a",
+				"method": "POST"
+			},
+			{
+				"id": "a400cc16-8a04-4e81-908b-86b2932a3cfd",
+				"method": "POST"
+			},
+			{
+				"id": "ee0b7b78-4e8a-4a79-ad94-e2127a6f9618",
+				"method": "POST"
+			},
+			{
+				"id": "1397b22a-a78b-4030-801f-aefa91023dc9",
+				"method": "POST"
+			},
+			{
+				"id": "f56a1aff-df7c-4611-bdf4-26ba9eaf281d",
+				"method": "GET"
+			},
+			{
+				"id": "7ef29ce2-1f90-49c3-a7e7-9d9d86013a1c",
+				"method": "GET"
+			},
+			{
+				"id": "1b9649ab-5e41-4909-ab38-a69cb2cdfa30",
+				"method": "GET"
+			},
+			{
+				"id": "d3f30a05-dc4f-4a06-8df0-8820dea474e8",
+				"method": "POST"
+			},
+			{
+				"id": "7ffc6c17-9017-45db-a6a6-3bda530765b1",
+				"method": "POST"
+			}
+		]
+	}
+}

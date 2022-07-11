@@ -1,8 +1,8 @@
 /**
  * utility functions for multiple pages
  *
- * @author  Marcel Suter
- * @since   2022-05-30
+ * @author  Nadina Shirin Amsler (shirin197)
+ * @since   2022-07-11
  * @version 1.0
  */
 
