@@ -47,29 +47,6 @@ public class Sportarten {
 
 
     /**
-     * Methoden
-     */
-    public void createSportart(){
-
-    }
-
-    public void readSportart(){
-
-    }
-
-    public void listSportart(){
-
-    }
-
-    public void updateSportart(){
-
-    }
-
-    public void deleteSportart(){
-
-    }
-
-    /**
      * @Getter
      * @return the sportartID
      */

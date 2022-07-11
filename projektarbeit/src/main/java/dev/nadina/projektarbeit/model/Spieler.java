@@ -80,31 +80,6 @@ public class Spieler {
     @NotNull
     private Boolean captain;
 
-
-    /**
-     * Methoden
-     */
-    public void createSpieler(){
-
-    }
-
-    public void readSpieler(){
-
-    }
-
-    public void listSpieler(){
-
-    }
-
-    public void updateSpieler(){
-
-    }
-
-    public void deleteSpieler(){
-
-    }
-
-
     /**
      * @Getter
      * @return the spielerID

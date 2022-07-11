@@ -1,9 +1,7 @@
 package dev.nadina.projektarbeit.service;
 
 import dev.nadina.projektarbeit.data.DataHandler;
-import dev.nadina.projektarbeit.model.Spieler;
 import dev.nadina.projektarbeit.model.Sportarten;
-import dev.nadina.projektarbeit.model.Team;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;

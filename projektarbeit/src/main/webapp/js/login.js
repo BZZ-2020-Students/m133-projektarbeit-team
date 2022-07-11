@@ -1,8 +1,14 @@
 /**
- * view-controller for login-form
+ * login form submit-function
+ *
+ * @author  Nadina Shirin Amsler (shirin197)
+ * @since   2022-07-11
+ * @version 1.0
  */
 
-
+/**
+ * view-controller for login-form
+ */
 
 document.cookie = "userRole=guest; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,6 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("loginForm").addEventListener("submit", loginUser);
 });
 
+/**
+ * login-user-function
+ * @param event
+ */
 function loginUser(event) {
     event.preventDefault();
     showMessage("", "info");

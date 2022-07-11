@@ -164,6 +164,14 @@ public class DataHandler {
         return team;
     }
 
+    /**
+     * @param sortField
+     * @param sortOrder
+     * @param filterField
+     * @param filter
+     * reads all TeamsBySportart
+     * @return list of Teams
+     */
     public static List<Team> readSortedTeams(
             String sortField,
             String sortOrder,
@@ -199,6 +207,12 @@ public class DataHandler {
         return teams;
     }
 
+    /**
+     * @param fieldname
+     * @param filter
+     * reads all TeamsBySportart
+     * @return list of Teams
+     */
     public static List<Team> readFilteredTeams(
             String fieldname,
             String filter)

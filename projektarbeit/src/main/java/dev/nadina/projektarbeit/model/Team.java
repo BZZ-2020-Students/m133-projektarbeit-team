@@ -17,10 +17,6 @@ import jakarta.ws.rs.FormParam;
 public class Team {
 
     /**
-     * Attribute
-     */
-
-    /**
      * @FormParam("teamID")
      * @Pattern(regexp = "|[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")
      */
@@ -46,28 +42,6 @@ public class Team {
     @NotEmpty
     private String gruendungsdatum;
 
-    /**
-     * Methoden
-     */
-    public void createTeam(){
-
-    }
-
-    public void readTeam(){
-
-    }
-
-    public void listTeam(){
-
-    }
-
-    public void  updateTeam(){
-
-    }
-
-    public void deleteTeam(){
-
-    }
 
     /**
      * @Getter

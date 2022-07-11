@@ -1,15 +1,11 @@
 package dev.nadina.projektarbeit.service;
-
-import dev.nadina.projektarbeit.data.DataHandler;
 import dev.nadina.projektarbeit.data.UserData;
-import dev.nadina.projektarbeit.model.Team;
 import dev.nadina.projektarbeit.model.User;
 import jakarta.annotation.security.PermitAll;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Random;
 

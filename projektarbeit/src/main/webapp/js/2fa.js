@@ -1,4 +1,12 @@
 /**
+ * 2fa
+ *
+ * @author  Nadina Shirin Amsler (shirin197)
+ * @since   2022-07-11
+ * @version 1.0
+ */
+
+/**
  * view-controller for 2fa-form
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -6,6 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("2faForm").addEventListener("submit", twoFAUser);
 });
 
+/**
+ * 2fa-user-function
+ * @param event
+ */
 function twoFAUser(event) {
     event.preventDefault();
     showMessage("", "info");
@@ -28,7 +40,9 @@ function twoFAUser(event) {
         });
 }
 
-
+/**
+ * login-success-function
+ */
 function loginSuccess() {
     window.location.href = "./team.html";
 }
