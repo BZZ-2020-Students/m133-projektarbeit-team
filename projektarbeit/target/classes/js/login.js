@@ -1,6 +1,9 @@
 /**
  * view-controller for login-form
  */
+
+
+
 document.cookie = "userRole=guest; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 document.addEventListener("DOMContentLoaded", () => {
     showNav("guest");
@@ -37,6 +40,8 @@ function loginUser(event) {
  * @param response
  */
 function loginSuccess(response) {
-    saveToken(response.headers);
-    window.location.href = "./team.html";
+    window.location.href = "./2fa.html";
 }
+
+
+

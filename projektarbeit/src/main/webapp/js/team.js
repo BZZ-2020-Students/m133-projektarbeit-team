@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function showHeadings(){
     const sort = getSort();
     const ids = ["teamname", "gruendungsdatum", "teamID"];
-    const labels = ["teamname", "gruendungsdatum", "teamID"];
+    const labels = ["Teamname", "Gruendungsdatum", "TeamID"];
 
     let row = document.getElementById("headings");
     row.innerText = "";
@@ -118,7 +118,6 @@ function showTeamList(data){
             row.insertCell(-1).appendChild(button);
         }
     });
-
     if (userRole === "admin") {
         document.getElementById("addButton").innerHTML = "<a href='./teameditor.html'><button>Team hinzufügen</button></a>";
     }

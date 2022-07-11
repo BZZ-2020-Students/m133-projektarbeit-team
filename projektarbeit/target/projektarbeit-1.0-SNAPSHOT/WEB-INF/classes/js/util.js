@@ -51,17 +51,6 @@ function getCookie(cname) {
     }
     return "";
 }
-
-/**
- * saves the JWToken in SessionStorage
- * @param headers  response headers
- */
-function saveToken(headers) {
-    const auth = headers.get("Authorization");
-    const token = auth.substring(7);
-    sessionStorage.setItem("token", token);
-}
-
 /**
  * reads the JWToken from SessionStorage
  * @returns {string}

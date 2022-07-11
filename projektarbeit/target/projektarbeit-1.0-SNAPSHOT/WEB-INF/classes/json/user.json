@@ -8,6 +8,12 @@
   "userUUID" : "002",
   "userName" : "user2",
   "password" : "user2pw",
-  "userRole" : "admin",
+  "userRole" : "user",
+  "words" : ["word1", "word2", "word3"]
+}, {
+  "userUUID" : "003",
+  "userName" : "user3",
+  "password" : "user3pw",
+  "userRole" : "guest",
   "words" : ["word1", "word2", "word3"]
 }]

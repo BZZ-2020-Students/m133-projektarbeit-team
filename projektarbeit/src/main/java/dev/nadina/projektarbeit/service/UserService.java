@@ -6,14 +6,12 @@ import dev.nadina.projektarbeit.model.Team;
 import dev.nadina.projektarbeit.model.User;
 import jakarta.annotation.security.PermitAll;
 import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.HttpHeaders;
-import jakarta.ws.rs.core.MediaType;
-import jakarta.ws.rs.core.NewCookie;
-import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.*;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * ServiceKlasse für User
@@ -39,18 +37,15 @@ public class UserService {
                 password
         );
 
-        String token = "";
         Map<String, Object> claimMap = new HashMap<>();
-        int randomWord = 0;
+        int randomInt = 0;
         if (user.getUserRole().equals("guest")) {
             httpStatus = 404;
         } else {
-            randomWord = (int) (Math.random() * 5);
+            Random r = new Random();
+            randomInt = r.nextInt(99)+1;
             claimMap.put("role", user.getUserRole());
-           // claimMap.put("word", user.getWords().get(randomWord));
         }
-       // token = JWToken.buildToken(user.getUserRole(), 5, claimMap);
-
 
         NewCookie roleCookie = new NewCookie(
                 "userRole",
@@ -64,7 +59,7 @@ public class UserService {
 
         NewCookie wordCookie = new NewCookie(
                 "secret",
-                randomWord + 1 + "",
+                randomInt+"",
                 "/",
                 "",
                 "Login-Cookie",
@@ -74,22 +69,31 @@ public class UserService {
 
         return Response
                 .status(httpStatus)
-                .entity(randomWord + 1)
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + token)
-                .cookie(roleCookie)
+                .entity(randomInt)
                 .cookie(wordCookie)
+                .cookie(roleCookie)
                 .build();
     }
 
     @PermitAll
+    @Path("2fa")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public Response checkWords(
+    public Response checkWord(
+            @FormParam("secret") String secret,
+            @CookieParam("secret") Cookie cookie
+    ) {
+        int httpStatus = 200;
+        String word = cookie.getValue();
+        System.out.println("SecretCookie: "+word);
+        System.out.println("SecretForm: "+secret);
+        if (word == null || !word.equals(secret)) {
+            httpStatus = 401;
+        }
 
-    ){
         return Response
-                .status(200)
-                .entity("")
+                .status(httpStatus)
+                .entity(null)
                 .build();
     }
 }

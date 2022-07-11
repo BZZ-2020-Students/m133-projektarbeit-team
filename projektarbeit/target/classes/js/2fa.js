@@ -3,7 +3,7 @@
  */
 const userRole = getCookie("userRole");
 document.addEventListener("DOMContentLoaded", () => {
-    showNav(userRole);
+    //showNav(userRole);
     showSecret();
     document.getElementById("2faForm").addEventListener("submit", twoFAUser);
 });
@@ -17,13 +17,12 @@ function twoFAUser(event) {
             method: "POST",
             headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Bearer " + readStorage("token")
             },
             body: "secret=" + document.getElementById("secret").value
         })
         .then(function (response) {
             if (!response.ok) {
-                showMessage("Falsches Geheimwort", "error");
+                showMessage("Falsche Zahl", "error");
             } else loginSuccess(response)
         })
         .catch(function (error) {
@@ -32,23 +31,17 @@ function twoFAUser(event) {
 }
 
 
-/**
- * saves the JWToken and redirects
- * @param response
- */
-function loginSuccess(response) {
-    saveToken(response.headers);
-    window.location.href = "./2fa.html";
+function loginSuccess() {
+    window.location.href = "./team.html";
 }
 
-/**
- * shows the number of the secret word to enter
- */
 function showSecret() {
     const index = getCookie("secret");
+    console.log(index);
     if (index != null) {
         document.getElementById("index").innerText = index;
+
     } else {
-        //window.location.href = "./index.html";
+        window.location.href = "./index.html";
     }
 }
