@@ -2,20 +2,18 @@
   "userUUID" : "001",
   "userName" : "user1",
   "password" : "user1pw",
-  "userRole" : "Admin"
+  "userRole" : "admin",
+  "words" : ["word1", "word2", "word3"]
 }, {
   "userUUID" : "002",
   "userName" : "user2",
   "password" : "user2pw",
-  "userRole" : "User"
+  "userRole" : "user",
+  "words" : ["word1", "word2", "word3"]
 }, {
   "userUUID" : "003",
   "userName" : "user3",
   "password" : "user3pw",
-  "userRole" : "User"
-}, {
-  "userUUID" : "004",
-  "userName" : "user4",
-  "password" : "user4pw",
-  "userRole" : "User"
-} ]
+  "userRole" : "guest",
+  "words" : ["word1", "word2", "word3"]
+}]

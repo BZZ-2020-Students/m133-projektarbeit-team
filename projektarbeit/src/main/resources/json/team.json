@@ -1,15 +1,37 @@
-[{
+[ {
+  "teamID" : "1",
   "teamname" : "Team A",
-  "gruendungsdatum" : "1erwerwe",
-  "teamID" : "1"
-},
-{
+  "gruendungsdatum" : "1erwerwe"
+}, {
+  "teamID" : "2",
   "teamname" : "Team B",
-  "gruendungsdatum" : "1erwerwe",
-  "teamID" : "2"
-},
-{
+  "gruendungsdatum" : "1erwerwe"
+}, {
+  "teamID" : "3",
   "teamname" : "Team C",
-  "gruendungsdatum" : "1erwerwe",
-  "teamID" : "3"
-}]
+  "gruendungsdatum" : "1erwerwe"
+}, {
+  "teamID" : "5b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+  "teamname" : "team2",
+  "gruendungsdatum" : "01.01.2001"
+}, {
+  "teamID" : "f2195f89-4a09-40b7-80b7-31915f629d93",
+  "teamname" : "team3",
+  "gruendungsdatum" : "21.07.2020"
+}, {
+  "teamID" : "5b08ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+  "teamname" : "team4",
+  "gruendungsdatum" : "10.01.2001"
+}, {
+  "teamID" : "f2195f89-4a09-40b7-80b7-31915f629d93",
+  "teamname" : "team3",
+  "gruendungsdatum" : "21.07.2020"
+}, {
+  "teamID" : "5b07ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+  "teamname" : "team2",
+  "gruendungsdatum" : "01.01.2001"
+}, {
+  "teamID" : "5b08ad4a-b809-43dd-8ae1-b4f6a8e31fe0",
+  "teamname" : "team4",
+  "gruendungsdatum" : "10.01.2001"
+} ]
